@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="喵星澜">
+  
+  
+  
+  <link rel="prev" href="https://meow-stars.github.io/2019/20190626/" />
+  
+  <link rel="canonical" href="https://meow-stars.github.io/2019/20190627/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Hugo搭建个人博客（三）—— Github绑定顶级域名 | 喵星澜 ~ MeowStars
+       
+  </title>
+  <meta name="title" content="Hugo搭建个人博客（三）—— Github绑定顶级域名 | 喵星澜 ~ MeowStars">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/meow-stars.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Hugo搭建个人博客（三）—— Github绑定顶级域名",
+    "headline" : "Hugo搭建个人博客（三）—— Github绑定顶级域名",
+    "description" : "域名注册 这个就不细讲了，国内阿里云、腾讯云都挺好的，随便挑吧，看哪个优惠力度大。\n我选的阿里云，因为.info域名阿里云第一年更便宜。\n域名解析 域名注册好后，要将域名解析到博客上才能使用。\n 进入阿里云域名服务-域名列表。这里会显示在阿里云注册的域名 选择注册好的域名，最后操作一列有解析选项，点击  选择添加记录  在终端输入ping yourName@github.io，可以查看到IP为185.199.110.153。（似乎现在所有Github Page的IP都是这个，不过还是自己ping一遍吧） 添加两个类型为A的记录，一个主机记录为www，另一个为@。记录值都是IP地址   修改Github仓库的CNAME文件  进入yourName.github.io仓库，找到文件CNAME 如果没有，就自己创建一个。选择右上角Create new file  文件名为CNAME，没有文件类型后缀 输入内容为注册好的域名  提交保存后就大功告成！等待几分钟使域名生效，就可以通过顶级域名访问博客了  域名备案 服务器在国内的顶级域名都需要备案，我没用服务器，就先挖个坑，等我哪天开始折腾云服务器了就来填坑。",
+    "inLanguage" : "en-us",
+    "author" : "喵星澜",
+    "creator" : "喵星澜",
+    "publisher": "喵星澜",
+    "accountablePerson" : "喵星澜",
+    "copyrightHolder" : "喵星澜",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-06-27 22:28:17 \x2b0800 CST",
+    "dateModified" : "2019-06-27 22:28:17 \x2b0800 CST",
+    "url" : "https:\/\/meow-stars.github.io\/2019\/20190627\/",
+    "wordCount" : "22",
+    "keywords" : [ "Hugo", "喵星澜 ~ MeowStars"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">喵星澜 ~ MeowStars</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">喵星澜 ~ MeowStars</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Hugo搭建个人博客（三）—— Github绑定顶级域名</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://meow-stars.github.io/" rel="author">喵星澜</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-06-27 itemprop="datePublished">June 27, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h2 id="域名注册">域名注册</h2>
+
+<p>这个就不细讲了，国内阿里云、腾讯云都挺好的，随便挑吧，看哪个优惠力度大。</p>
+
+<p>我选的阿里云，因为.info域名阿里云第一年更便宜。</p>
+
+<h2 id="域名解析">域名解析</h2>
+
+<p>域名注册好后，要将域名解析到博客上才能使用。</p>
+
+<ul>
+<li>进入阿里云域名服务-域名列表。这里会显示在阿里云注册的域名</li>
+<li>选择注册好的域名，最后操作一列有解析选项，点击
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww3.sinaimg.cn/large/006tNc79gy1g4h1bwmucxj31ne08kjt4.jpg" alt="域名解析（一）" class="lazyload"><figcaption class="image-caption">域名解析（一）</figcaption></figure></li>
+<li>选择添加记录
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww3.sinaimg.cn/large/006tNc79gy1g4h2oyxjuyj31le0nhtca.jpg" alt="域名解析（二）" class="lazyload"><figcaption class="image-caption">域名解析（二）</figcaption></figure></li>
+<li>在终端输入<code>ping yourName@github.io</code>，可以查看到IP为<code>185.199.110.153</code>。（似乎现在所有Github Page的IP都是这个，不过还是自己ping一遍吧）</li>
+<li>添加两个类型为A的记录，一个主机记录为www，另一个为@。记录值都是IP地址
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww2.sinaimg.cn/large/006tNc79gy1g4h1i1euxhj310q0qk0ut.jpg" alt="域名解析（三）" class="lazyload"><figcaption class="image-caption">域名解析（三）</figcaption></figure>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww3.sinaimg.cn/large/006tNc79gy1g4h1iosf0fj31mo0a80us.jpg" alt="域名解析（四）" class="lazyload"><figcaption class="image-caption">域名解析（四）</figcaption></figure></li>
+</ul>
+
+<h2 id="修改github仓库的cname文件">修改Github仓库的CNAME文件</h2>
+
+<ul>
+<li>进入yourName.github.io仓库，找到文件CNAME</li>
+<li>如果没有，就自己创建一个。选择右上角Create new file
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww2.sinaimg.cn/large/006tNc79gy1g4h1p8dehpj31r205cjsy.jpg" alt="绑定域名（一）" class="lazyload"><figcaption class="image-caption">绑定域名（一）</figcaption></figure></li>
+<li><strong>文件名为CNAME，没有文件类型后缀</strong></li>
+<li>输入内容为<strong>注册好的域名</strong>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww3.sinaimg.cn/large/006tNc79gy1g4h1pp8aj2j31n00regod.jpg" alt="绑定域名（二）" class="lazyload"><figcaption class="image-caption">绑定域名（二）</figcaption></figure></li>
+<li>提交保存后就大功告成！等待几分钟使域名生效，就可以通过顶级域名访问博客了</li>
+</ul>
+
+<h2 id="域名备案">域名备案</h2>
+
+<p>服务器在国内的顶级域名都需要备案，我没用服务器，就先挖个坑，等我哪天开始折腾云服务器了就来填坑。</p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>喵星澜 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://meow-stars.github.io/2019/20190627/>https://meow-stars.github.io/2019/20190627/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/hugo/">
+                    #Hugo</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://meow-stars.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://meow-stars.github.io/2019/20190626/" class="prev" rel="prev" title="Hugo搭建个人博客（二）—— 托管到Github"><i class="iconfont icon-left"></i>&nbsp;Hugo搭建个人博客（二）—— 托管到Github</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://meow-stars.github.io/">喵星澜</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

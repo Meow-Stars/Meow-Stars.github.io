@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="喵星澜">
+  
+  
+  
+  <link rel="prev" href="https://meow-stars.github.io/2019/20190625/" />
+  <link rel="next" href="https://meow-stars.github.io/2019/20190627/" />
+  <link rel="canonical" href="https://meow-stars.github.io/2019/20190626/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           Hugo搭建个人博客（二）—— 托管到Github | 喵星澜 ~ MeowStars
+       
+  </title>
+  <meta name="title" content="Hugo搭建个人博客（二）—— 托管到Github | 喵星澜 ~ MeowStars">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/meow-stars.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "Hugo搭建个人博客（二）—— 托管到Github",
+    "headline" : "Hugo搭建个人博客（二）—— 托管到Github",
+    "description" : "创建Github仓库（repo、repository）  登录Github账号（默认已经拥有Github账号，没有就注册一个） 点击右上角头像，选择Your repositories  选择绿色的按钮New 在Repository name填入仓库名称，一定要是yourName.github.io的形式，将yourName替换成你的Github用户名。其它什么都不要做，直接按Create repository  新创建好的仓库如图所示： 注意红框中的信息，这是仓库地址，一会要用到  使用Git上传内容到仓库  打开终端，转到站点根目录  cd MySite   运行服务器，其中yourName自行替换为Github用户名  hugo --theme=LeaveIt --baseUrl=\x26quot;https:\/\/yourName.github.io\/\x26quot;   执行完后会在MySite下创建一个名为public的文件夹，这是要上传内容的根目录  cd public   执行以下内容：   touch README.md git init\t\/\/初始化本地仓库 git add README.md git commit -m \x26quot;first commit\x26quot; git remote add origin git@github.com:xxx\/xxx.github.io.git \/\/将git@github.com:xxx\/xxx.github.io.git替换为上图红框中内容 git add -A git push -u origin master\t\/\/-u表示第一次提交，如果不是第一次不要加-u   命令成功执行后终端会显示类似如下内容：  打开Github仓库，会发现仓库变成了这样：  在浏览器中访问https:\/\/meow-stars.",
+    "inLanguage" : "en-us",
+    "author" : "喵星澜",
+    "creator" : "喵星澜",
+    "publisher": "喵星澜",
+    "accountablePerson" : "喵星澜",
+    "copyrightHolder" : "喵星澜",
+    "copyrightYear" : "2019",
+    "datePublished": "2019-06-26 14:17:47 \x2b0800 CST",
+    "dateModified" : "2019-06-26 14:17:47 \x2b0800 CST",
+    "url" : "https:\/\/meow-stars.github.io\/2019\/20190626\/",
+    "wordCount" : "230",
+    "keywords" : [ "Hugo", "喵星澜 ~ MeowStars"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">喵星澜 ~ MeowStars</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">喵星澜 ~ MeowStars</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">Hugo搭建个人博客（二）—— 托管到Github</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://meow-stars.github.io/" rel="author">喵星澜</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2019-06-26 itemprop="datePublished">June 26, 2019</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h2 id="创建github仓库-repo-repository">创建Github仓库（repo、repository）</h2>
+
+<ul>
+<li>登录Github账号（默认已经拥有Github账号，没有就注册一个）</li>
+<li>点击右上角头像，选择<strong>Your repositories</strong>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/001@2x.png" alt="创建仓库（一）" class="lazyload"><figcaption class="image-caption">创建仓库（一）</figcaption></figure></li>
+<li>选择绿色的按钮<strong>New</strong></li>
+<li>在Repository name填入仓库名称，一定要是<strong>yourName.github.io</strong>的形式，将yourName替换成你的Github用户名。<strong>其它什么都不要做，直接按Create repository</strong>
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/002@2x.png" alt="创建仓库（二）" class="lazyload"><figcaption class="image-caption">创建仓库（二）</figcaption></figure></li>
+<li>新创建好的仓库如图所示：
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/003@2x.png" alt="创建仓库（三）" class="lazyload"><figcaption class="image-caption">创建仓库（三）</figcaption></figure>
+注意红框中的信息，这是仓库地址，一会要用到</li>
+</ul>
+
+<h2 id="使用git上传内容到仓库">使用Git上传内容到仓库</h2>
+
+<ul>
+<li>打开终端，转到站点根目录</li>
+</ul>
+
+<pre><code class="language-bash">cd MySite
+</code></pre>
+
+<ul>
+<li>运行服务器，其中yourName自行替换为Github用户名</li>
+</ul>
+
+<pre><code class="language-bash">hugo --theme=LeaveIt --baseUrl=&quot;https://yourName.github.io/&quot;
+</code></pre>
+
+<ul>
+<li>执行完后会在MySite下创建一个名为public的文件夹，这是要上传内容的根目录</li>
+</ul>
+
+<pre><code class="language-bash">cd public
+</code></pre>
+
+<ul>
+<li>执行以下内容：
+<br /></li>
+</ul>
+
+<pre><code class="language-bash">touch README.md
+git init	//初始化本地仓库
+git add README.md
+git commit -m &quot;first commit&quot;
+git remote add origin git@github.com:xxx/xxx.github.io.git    //将git@github.com:xxx/xxx.github.io.git替换为上图红框中内容
+git add -A
+git push -u origin master	//-u表示第一次提交，如果不是第一次不要加-u       
+</code></pre>
+
+<ul>
+<li>命令成功执行后终端会显示类似如下内容：
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/005@2x.png" alt="上传文件（一）" class="lazyload"><figcaption class="image-caption">上传文件（一）</figcaption></figure></li>
+<li>打开Github仓库，会发现仓库变成了这样：
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="/images/004@2x.png" alt="上传文件（二）" class="lazyload"><figcaption class="image-caption">上传文件（二）</figcaption></figure></li>
+<li>在浏览器中访问<a href="https://meow-stars.github.io/" rel="nofollow noreferrer" target="_blank">https://meow-stars.github.io/</a>（注意地址要替换成自己的），可以看到博客已经搭建好了</li>
+</ul>
+
+<h2 id="错误解决">错误解决</h2>
+
+<h4 id="一">一、</h4>
+
+<p>在执行<code>git remote add origin git@github.com:xxx/xxx.github.io.git</code>时如果报错：</p>
+
+<p><strong>fatal: remote origin already exists.</strong></p>
+
+<p>执行<code>git remote rm origin</code>，再重新执行<code>git remote add origin git@github.com:xxx/xxx.github.io.git</code>。</p>
+
+<h4 id="二">二、</h4>
+
+<p>如果不是第一次向仓库上传文件，而是要进行更新，在执行<code>git push origin master</code>可能会报错：</p>
+
+<p><strong>error: failed to push some refs to &lsquo;git@github.com:xxx/xxx.git&rsquo; hint: Updates were rejected because the remote contains work that you do not have locally&hellip;.</strong></p>
+
+<p>则先执行<code>git pull origin master</code>，再重新执行<code>git push origin master</code>。</p>
+
+<h2 id="更新github">更新Github</h2>
+
+<p>终端执行以下代码：</p>
+
+<pre><code class="language-bash">cd MySite
+hugo --theme=LeaveIt --baseUrl=&quot;https://yourName.github.io/&quot;
+cd public
+git status
+git add -A
+git commit -m &quot;second commit&quot;
+git pull
+git push origin master
+</code></pre>
+
+<h2 id="脚本自动部署">脚本自动部署</h2>
+
+<p>每次更新都要重新输入这么多代码，不符合我懒宅废的处事原则，所以选择使用脚本，这样只要执行脚本就可以进行更新了。</p>
+
+<p><strong>在网站根目录MySite创建一个脚本文件deploy.sh。</strong></p>
+
+<p><strong>注意替换掉baseUrl</strong></p>
+
+<pre><code class="language-shell">echo -e &quot;\033[0;32mDeploying updates to GitHub...\033[0m&quot;
+# Build the project.
+# 替换baseUrl
+hugo --theme=LeaveIt --baseUrl=&quot;https://yourName.github.io/&quot; # if using a theme, replace with `hugo -t &lt;YOURTHEME&gt;`
+# Go To Public folder
+cd public
+# Add changes to git.
+git add -A
+# Commit changes.
+msg=&quot;rebuilding site `date`&quot;
+if [ $# -eq 1 ]
+  then msg=&quot;$1&quot;
+fi
+git commit -m &quot;$msg&quot;
+# Push source and build repos.
+git pull
+git push origin master
+# Come Back up to the Project Root
+cd ..
+</code></pre>
+
+<p>还没完，接下来：</p>
+
+<ul>
+<li>打开终端，转到站点根目录</li>
+</ul>
+
+<pre><code class="language-bash">cd MySite
+touch deploy.sh
+</code></pre>
+
+<ul>
+<li>给脚本文件可执行权限</li>
+</ul>
+
+<pre><code class="language-bash">chmod +x deploy.sh
+</code></pre>
+
+<ul>
+<li>每次写完文章后只要执行脚本文件</li>
+</ul>
+
+<pre><code class="language-bash">./deploy.sh
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>喵星澜 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://meow-stars.github.io/2019/20190626/>https://meow-stars.github.io/2019/20190626/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/hugo/">
+                    #Hugo</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://meow-stars.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://meow-stars.github.io/2019/20190625/" class="prev" rel="prev" title="Hugo搭建个人博客（一）—— 本地运行"><i class="iconfont icon-left"></i>&nbsp;Hugo搭建个人博客（一）—— 本地运行</a>
+         
+        
+        <a href="https://meow-stars.github.io/2019/20190627/" class="next" rel="next" title="Hugo搭建个人博客（三）—— Github绑定顶级域名">Hugo搭建个人博客（三）—— Github绑定顶级域名&nbsp;<i class="iconfont icon-right"></i></a>
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2019</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://meow-stars.github.io/">喵星澜</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

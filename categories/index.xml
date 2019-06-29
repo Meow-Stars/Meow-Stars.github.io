@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Categories on 喵星澜 ~ MeowStars</title>
+    <link>https://meow-stars.github.io/categories/</link>
+    <description>Recent content in Categories on 喵星澜 ~ MeowStars</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 27 Jun 2019 22:28:17 +0800</lastBuildDate>
+    
+	<atom:link href="https://meow-stars.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>环境•配置</title>
+      <link>https://meow-stars.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Thu, 27 Jun 2019 22:28:17 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
