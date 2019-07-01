@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Sketch on 喵星澜 ~ MeowStars</title>
+    <link>https://meow-stars.github.io/tags/sketch/</link>
+    <description>Recent content in Sketch on 喵星澜 ~ MeowStars</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 01 Jul 2019 21:22:10 +0800</lastBuildDate>
+    
+	<atom:link href="https://meow-stars.github.io/tags/sketch/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Sketch安装插件</title>
+      <link>https://meow-stars.github.io/2019/20190701-1/</link>
+      <pubDate>Mon, 01 Jul 2019 21:22:10 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/2019/20190701-1/</guid>
+      <description> 插件安装 Sketch开放了插件系统，有很多优秀插件可以丰富Sketch的功能。
+那么问题来了，总要先会安装插件才能享受插件带来的丰富扩展吧︿(￣︶￣)︿
+一般Sketch安装插件有两种方法： 1. 通过第三方插件管理工具Sketch Toolbox安装 2. Github下载后手动安装
+Sketch Toolbox已经有三年没有维护了，所以还是详细介绍第二种吧。
+Github下载后手动安装  从Github下载插件到本地 解压缩，最后的后缀名应该是.sketchplugin  打开Sketch 在Finder中双击.sketchplugin文件 Sketch提示成功安装插件  在插件→管理插件列表中可以进行插件管理   </description>
+    </item>
+    
+  </channel>
+</rss>
