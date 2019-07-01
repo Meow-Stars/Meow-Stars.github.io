@@ -6,10 +6,19 @@
     <description>Recent content in Categories on 喵星澜 ~ MeowStars</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Jun 2019 22:28:17 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jul 2019 20:49:09 +0800</lastBuildDate>
     
 	<atom:link href="https://meow-stars.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>MAC•操作</title>
+      <link>https://meow-stars.github.io/categories/mac%E6%93%8D%E4%BD%9C/</link>
+      <pubDate>Mon, 01 Jul 2019 20:49:09 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/categories/mac%E6%93%8D%E4%BD%9C/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>环境•配置</title>
