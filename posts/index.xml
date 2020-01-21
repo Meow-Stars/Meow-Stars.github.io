@@ -6,22 +6,31 @@
     <description>Recent content in Posts on 喵星澜 ~ MeowStars</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 01 Jul 2019 21:22:10 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 21 Jul 2019 22:56:54 +0800</lastBuildDate>
     
 	<atom:link href="https://meow-stars.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Sketch安装插件</title>
-      <link>https://meow-stars.github.io/2019/20190701-1/</link>
-      <pubDate>Mon, 01 Jul 2019 21:22:10 +0800</pubDate>
+      <title>【iOS小白】APP首次启动的初始设置界面</title>
+      <link>https://meow-stars.github.io/2019/20190721/</link>
+      <pubDate>Sun, 21 Jul 2019 22:56:54 +0800</pubDate>
       
-      <guid>https://meow-stars.github.io/2019/20190701-1/</guid>
+      <guid>https://meow-stars.github.io/2019/20190721/</guid>
+      <description>新建project 新建storyboard  选中项目文件，快捷键command+N，或者File &amp;gt;&amp;gt; New &amp;gt;&amp;gt; File 选择iOS &amp;gt;&amp;gt; User Interface &amp;gt;&amp;gt; Storyboard 【图片】 【图片】 新建Cocoa Touch Class文件 【图片】 【图片】 将其重命名为InitialLaunch.swift 【图片】 打开InitialLaunch，从Library中拖入一个View Controller 【图片】 选中新建的View Controller 【图片】 在最右侧Inspector面板中，选择第三个Identity inspector，将Class和Storyboard ID均改为InitialLaunch，回车使修改生效， 【图片】  代码1 创建swift文件扩展UserDefaults
+import Foundation import UIKit extension UserDefaults { // MARK: 应用第一次启用 static func isFirstLaunch() -&amp;gt; Bool { let hasBeenLaunched = &amp;quot;hasBeenLaunched&amp;quot; let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched) if isFirstLaunch { UserDefaults.standard.set(true, forKey: hasBeenLaunched) UserDefaults.standard.synchronize() } return isFirstLaunch } }  代码2 打开文件AppDelegate.</description>
+    </item>
+    
+    <item>
+      <title>Sketch安装插件</title>
+      <link>https://meow-stars.github.io/2019/20190702/</link>
+      <pubDate>Tue, 02 Jul 2019 21:22:10 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/2019/20190702/</guid>
       <description> 插件安装 Sketch开放了插件系统，有很多优秀插件可以丰富Sketch的功能。
 那么问题来了，总要先会安装插件才能享受插件带来的丰富扩展吧︿(￣︶￣)︿
-一般Sketch安装插件有两种方法： 1. 通过第三方插件管理工具Sketch Toolbox安装 2. Github下载后手动安装
-Sketch Toolbox已经有三年没有维护了，所以还是详细介绍第二种吧。
-Github下载后手动安装  从Github下载插件到本地 解压缩，最后的后缀名应该是.sketchplugin  打开Sketch 在Finder中双击.sketchplugin文件 Sketch提示成功安装插件  在插件→管理插件列表中可以进行插件管理   </description>
+一般Sketch安装插件有两种方法：
+ 通过第三方插件管理工具安装 Github下载后手动安装  Sketch插件管理工具  Sketch Toolbox Sketch Plugin Manager Sketchpacks Sketch Runner  Github下载后手动安装  从Github下载插件到本地 解压缩，最后的后缀名应该是.sketchplugin  打开Sketch 在Finder中双击.sketchplugin文件 Sketch提示成功安装插件  在插件→管理插件列表中可以进行插件管理   </description>
     </item>
     
     <item>
@@ -68,6 +77,17 @@ brew install hugo  可以通过hugo version语句查看Hugo版本。
  创建另一篇文章first.md  hugo new posts/first.md  这会在MySite/content目录下创建一个新的文件夹posts，以后的博文都存储在这个文件夹下。 同样打开first.md，在其中添加一些内容。
  可以发现文章顶部有一些meta信息，其中draft: true表示该篇文章为草稿，在发布时要把true改为false，否则只能在本地运行时查看，不会发布到网站上。  还可以向其中添加标签和分类信息，本篇文章最后的头部meta信息是这样的： 安装主题  command+N，新建一个终端界面，进入themes目录  cd themes   然后输入下方代码下载主题LeaveIt  git clone https://github.com/liuzc/LeaveIt.git   下载完成后发现MySite/themes文件夹下多了一个文件夹LeaveIt，点进去，找到exampleSite/config.toml，复制全部内容，然后粘贴到MySite/config.toml中去。这个config.toml是和themes文件夹同级的那个。
  在MySite/static下创建新文件夹images</description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://meow-stars.github.io/1/20190806/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>https://meow-stars.github.io/1/20190806/</guid>
+      <description>// MARK: 点击空白隐藏键盘 let tap = UITapGestureRecognizer(target: self, action: #selector(InitialLaunch.hideKeyboard(tapG:))) tap.cancelsTouchesInView = false self.view.addGestureRecognizer(tap)&amp;mdash; title: &amp;ldquo;【iOS小白】创建APP初始设置界面&amp;rdquo; date: 2019-08-07T18:02:28+08:00 tags: [&amp;ldquo;iOS&amp;rdquo;] categories: [&amp;ldquo;&amp;rdquo;]
+draft: true 怎么切换不同的UIPickerView？ 为每一个UIPickerView设立tag let periodDaysPicker = UIPickerView() periodDaysPicker.delegate = self periodDaysPicker.dataSource = self periodDaysPicker.tag = 3
+// 每个选项显示什么 func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&amp;gt; String? { switch pickerView.tag { case 2: return lastDaysTextOptions[row] case 3: return periodDaysTextOptions[row] default: return &amp;ldquo;没有选择器&amp;rdquo; } }</description>
     </item>
     
   </channel>

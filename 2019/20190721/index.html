@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://meow-stars.github.io/2019/20190627/" />
-  <link rel="next" href="https://meow-stars.github.io/2019/20190702/" />
-  <link rel="canonical" href="https://meow-stars.github.io/2019/20190701/" />
+  <link rel="prev" href="https://meow-stars.github.io/2019/20190702/" />
+  
+  <link rel="canonical" href="https://meow-stars.github.io/2019/20190721/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           MAC在Finder中显示隐藏文件 | 喵星澜 ~ MeowStars
+           【iOS小白】APP首次启动的初始设置界面 | 喵星澜 ~ MeowStars
        
   </title>
-  <meta name="title" content="MAC在Finder中显示隐藏文件 | 喵星澜 ~ MeowStars">
+  <meta name="title" content="【iOS小白】APP首次启动的初始设置界面 | 喵星澜 ~ MeowStars">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/meow-stars.github.io\/"
     },
     "articleSection" : "posts",
-    "name" : "MAC在Finder中显示隐藏文件",
-    "headline" : "MAC在Finder中显示隐藏文件",
-    "description" : " 显示隐藏文件 在终端中输入\ndefaults write com.apple.Finder AppleShowAllFiles YES KillAll Finder  效果如图： 不显示隐藏文件 defaults write com.apple.Finder AppleShowAllFiles NO KillAll Finder  ",
+    "name" : "【iOS小白】APP首次启动的初始设置界面",
+    "headline" : "【iOS小白】APP首次启动的初始设置界面",
+    "description" : "新建project 新建storyboard  选中项目文件，快捷键command\x2bN，或者File \x26gt;\x26gt; New \x26gt;\x26gt; File 选择iOS \x26gt;\x26gt; User Interface \x26gt;\x26gt; Storyboard 【图片】 【图片】 新建Cocoa Touch Class文件 【图片】 【图片】 将其重命名为InitialLaunch.swift 【图片】 打开InitialLaunch，从Library中拖入一个View Controller 【图片】 选中新建的View Controller 【图片】 在最右侧Inspector面板中，选择第三个Identity inspector，将Class和Storyboard ID均改为InitialLaunch，回车使修改生效， 【图片】  代码1 创建swift文件扩展UserDefaults\nimport Foundation import UIKit extension UserDefaults { \/\/ MARK: 应用第一次启用 static func isFirstLaunch() -\x26gt; Bool { let hasBeenLaunched = \x26quot;hasBeenLaunched\x26quot; let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched) if isFirstLaunch { UserDefaults.standard.set(true, forKey: hasBeenLaunched) UserDefaults.standard.synchronize() } return isFirstLaunch } }  代码2 打开文件AppDelegate.",
     "inLanguage" : "en-us",
     "author" : "喵星澜",
     "creator" : "喵星澜",
@@ -54,11 +54,11 @@
     "accountablePerson" : "喵星澜",
     "copyrightHolder" : "喵星澜",
     "copyrightYear" : "2019",
-    "datePublished": "2019-07-01 20:49:09 \x2b0800 CST",
-    "dateModified" : "2019-07-01 20:49:09 \x2b0800 CST",
-    "url" : "https:\/\/meow-stars.github.io\/2019\/20190701\/",
-    "wordCount" : "18",
-    "keywords" : [ "MAC", "喵星澜 ~ MeowStars"]
+    "datePublished": "2019-07-21 22:56:54 \x2b0800 CST",
+    "dateModified" : "2019-07-21 22:56:54 \x2b0800 CST",
+    "url" : "https:\/\/meow-stars.github.io\/2019\/20190721\/",
+    "wordCount" : "107",
+    "keywords" : [ "xcode", "喵星澜 ~ MeowStars"]
 }
 </script>
 
@@ -116,15 +116,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">MAC在Finder中显示隐藏文件</h1>
+        <h1 class="post-title" itemprop="name headline">【iOS小白】APP首次启动的初始设置界面</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://meow-stars.github.io/" rel="author">喵星澜</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2019-07-01 itemprop="datePublished">July 1, 2019</time>
+                on <time datetime=2019-07-21 itemprop="datePublished">July 21, 2019</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
+                        <a href="https://meow-stars.github.io/categories/iosswift/"> iOS•Swift </a>
                         
                 </span>
         </div>
@@ -132,8 +133,6 @@
     <div class="post-content">
         
 
-        
-            
         
 
         
@@ -149,21 +148,63 @@
 
           
 
-<h3 id="显示隐藏文件">显示隐藏文件</h3>
+<h2 id="新建project">新建project</h2>
 
-<p>在终端中输入</p>
+<h2 id="新建storyboard">新建storyboard</h2>
 
-<pre><code class="language-bash">defaults write com.apple.Finder AppleShowAllFiles YES
-KillAll Finder
+<ol>
+<li>选中项目文件，快捷键command+N，或者File &gt;&gt; New &gt;&gt; File</li>
+<li>选择iOS &gt;&gt; User Interface &gt;&gt; Storyboard
+【图片】
+【图片】</li>
+<li>新建Cocoa Touch Class文件
+【图片】
+【图片】</li>
+<li>将其重命名为InitialLaunch.swift
+【图片】</li>
+<li>打开InitialLaunch，从Library中拖入一个View Controller
+【图片】</li>
+<li>选中新建的View Controller
+【图片】</li>
+<li>在最右侧Inspector面板中，选择第三个Identity inspector，将Class和Storyboard ID均改为InitialLaunch，回车使修改生效，
+【图片】</li>
+</ol>
+
+<h2 id="代码1">代码1</h2>
+
+<p>创建swift文件扩展UserDefaults</p>
+
+<pre><code class="language-swift">import Foundation
+import UIKit
+
+extension UserDefaults {
+    // MARK: 应用第一次启用
+    static func isFirstLaunch() -&gt; Bool {
+        let hasBeenLaunched = &quot;hasBeenLaunched&quot;
+        let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched)
+        if isFirstLaunch {
+            UserDefaults.standard.set(true, forKey: hasBeenLaunched)
+            UserDefaults.standard.synchronize()
+        }
+        return isFirstLaunch
+    }
+}
+
 </code></pre>
 
-<p>效果如图：
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww1.sinaimg.cn/large/006tNc79gy1g4kmv1hyqmj31fi0u0dzb.jpg" alt="" class="lazyload"><figcaption class="image-caption"></figcaption></figure></p>
+<h2 id="代码2">代码2</h2>
 
-<h3 id="不显示隐藏文件">不显示隐藏文件</h3>
+<p>打开文件AppDelegate.swift，修改函数application()</p>
 
-<pre><code class="language-bash">defaults write com.apple.Finder AppleShowAllFiles NO
-KillAll Finder
+<pre><code class="language-swift">func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+    // 判断APP第一次启动
+    if UserDefaults.isFirstLaunch() {
+        print(&quot;这是第一次启动&quot;)
+        let initialLaunch = UIStoryboard(name: &quot;InitialLaunch&quot;, bundle: nil).instantiateViewController(withIdentifier: &quot;InitialLaunch&quot;) as UIViewController
+        self.window!.rootViewController = initialLaunch
+    }
+    return true
+}
 </code></pre>
 
     </div>
@@ -179,7 +220,7 @@ KillAll Finder
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://meow-stars.github.io/2019/20190701/>https://meow-stars.github.io/2019/20190701/</span>
+                    <a href=https://meow-stars.github.io/2019/20190721/>https://meow-stars.github.io/2019/20190721/</span>
             </p>
             
              
@@ -195,8 +236,8 @@ KillAll Finder
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://meow-stars.github.io/tags/mac/">
-                    #MAC</a></span>
+            <span class="tag"><a href="https://meow-stars.github.io/tags/xcode/">
+                    #xcode</a></span>
             
             </section>
         
@@ -208,10 +249,8 @@ KillAll Finder
 
     <div class="post-nav">
         
-        <a href="https://meow-stars.github.io/2019/20190627/" class="prev" rel="prev" title="Hugo搭建个人博客（三）—— Github绑定顶级域名"><i class="iconfont icon-left"></i>&nbsp;Hugo搭建个人博客（三）—— Github绑定顶级域名</a>
+        <a href="https://meow-stars.github.io/2019/20190702/" class="prev" rel="prev" title="Sketch安装插件"><i class="iconfont icon-left"></i>&nbsp;Sketch安装插件</a>
          
-        
-        <a href="https://meow-stars.github.io/2019/20190702/" class="next" rel="next" title="Sketch安装插件">Sketch安装插件&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -253,9 +292,8 @@ KillAll Finder
 
 
     
-     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
-     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
 
