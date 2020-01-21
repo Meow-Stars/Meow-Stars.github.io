@@ -49,75 +49,6 @@ class ViewController: UIViewController {
     </item>
     
     <item>
-      <title>【iOS小白】APP首次启动的初始设置界面</title>
-      <link>https://meow-stars.github.io/2019/20190721/</link>
-      <pubDate>Sun, 21 Jul 2019 22:56:54 +0800</pubDate>
-      
-      <guid>https://meow-stars.github.io/2019/20190721/</guid>
-      <description>
-
-&lt;h2 id=&#34;新建project&#34;&gt;新建project&lt;/h2&gt;
-
-&lt;h2 id=&#34;新建storyboard&#34;&gt;新建storyboard&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;选中项目文件，快捷键command+N，或者File &amp;gt;&amp;gt; New &amp;gt;&amp;gt; File&lt;/li&gt;
-&lt;li&gt;选择iOS &amp;gt;&amp;gt; User Interface &amp;gt;&amp;gt; Storyboard
-【图片】
-【图片】&lt;/li&gt;
-&lt;li&gt;新建Cocoa Touch Class文件
-【图片】
-【图片】&lt;/li&gt;
-&lt;li&gt;将其重命名为InitialLaunch.swift
-【图片】&lt;/li&gt;
-&lt;li&gt;打开InitialLaunch，从Library中拖入一个View Controller
-【图片】&lt;/li&gt;
-&lt;li&gt;选中新建的View Controller
-【图片】&lt;/li&gt;
-&lt;li&gt;在最右侧Inspector面板中，选择第三个Identity inspector，将Class和Storyboard ID均改为InitialLaunch，回车使修改生效，
-【图片】&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2 id=&#34;代码1&#34;&gt;代码1&lt;/h2&gt;
-
-&lt;p&gt;创建swift文件扩展UserDefaults&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;import Foundation
-import UIKit
-
-extension UserDefaults {
-    // MARK: 应用第一次启用
-    static func isFirstLaunch() -&amp;gt; Bool {
-        let hasBeenLaunched = &amp;quot;hasBeenLaunched&amp;quot;
-        let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched)
-        if isFirstLaunch {
-            UserDefaults.standard.set(true, forKey: hasBeenLaunched)
-            UserDefaults.standard.synchronize()
-        }
-        return isFirstLaunch
-    }
-}
-
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2 id=&#34;代码2&#34;&gt;代码2&lt;/h2&gt;
-
-&lt;p&gt;打开文件AppDelegate.swift，修改函数application()&lt;/p&gt;
-
-&lt;pre&gt;&lt;code class=&#34;language-swift&#34;&gt;func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&amp;gt; Bool {
-    // 判断APP第一次启动
-    if UserDefaults.isFirstLaunch() {
-        print(&amp;quot;这是第一次启动&amp;quot;)
-        let initialLaunch = UIStoryboard(name: &amp;quot;InitialLaunch&amp;quot;, bundle: nil).instantiateViewController(withIdentifier: &amp;quot;InitialLaunch&amp;quot;) as UIViewController
-        self.window!.rootViewController = initialLaunch
-    }
-    return true
-}
-&lt;/code&gt;&lt;/pre&gt;
-</description>
-    </item>
-    
-    <item>
       <title>Sketch安装插件</title>
       <link>https://meow-stars.github.io/2019/20190702/</link>
       <pubDate>Tue, 02 Jul 2019 21:22:10 +0800</pubDate>
@@ -539,60 +470,6 @@ touch deploy.sh
 &lt;p&gt;在Hugo服务器运行期间，会实时监测content文件夹中文章内容的改动，网页会自动刷新显示最新修改内容。&lt;/p&gt;
 
 &lt;p&gt;在终端界面按下快捷键control+C，可以停止运行服务器。服务器停止运行后，访问localhost:1313会被拒绝。&lt;/p&gt;
-</description>
-    </item>
-    
-    <item>
-      <title></title>
-      <link>https://meow-stars.github.io/1/20190806/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://meow-stars.github.io/1/20190806/</guid>
-      <description>
-
-&lt;p&gt;// MARK: 点击空白隐藏键盘
-        let tap = UITapGestureRecognizer(target: self, action: #selector(InitialLaunch.hideKeyboard(tapG:)))
-        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)&amp;mdash;
-title: &amp;ldquo;【iOS小白】创建APP初始设置界面&amp;rdquo;
-date: 2019-08-07T18:02:28+08:00
-tags: [&amp;ldquo;iOS&amp;rdquo;]
-categories: [&amp;ldquo;&amp;rdquo;]&lt;/p&gt;
-
-&lt;h2 id=&#34;draft-true&#34;&gt;draft: true&lt;/h2&gt;
-
-&lt;h2 id=&#34;怎么切换不同的uipickerview&#34;&gt;怎么切换不同的UIPickerView？&lt;/h2&gt;
-
-&lt;p&gt;为每一个UIPickerView设立tag
-        let periodDaysPicker = UIPickerView()
-        periodDaysPicker.delegate = self
-        periodDaysPicker.dataSource = self
-        periodDaysPicker.tag = 3&lt;/p&gt;
-
-&lt;p&gt;// 每个选项显示什么
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -&amp;gt; String? {
-        switch pickerView.tag {
-        case 2:
-            return lastDaysTextOptions[row]
-        case 3:
-            return periodDaysTextOptions[row]
-        default:
-            return &amp;ldquo;没有选择器&amp;rdquo;
-        }
-    }&lt;/p&gt;
-
-&lt;h2 id=&#34;点击空白隐藏键盘&#34;&gt;点击空白隐藏键盘&lt;/h2&gt;
-
-&lt;p&gt;第一步：在viewDidLoad()里写：
-        // MARK: 点击空白隐藏键盘
-        let tap = UITapGestureRecognizer(target: self, action: #selector(InitialLaunch.hideKeyboard(tapG:)))
-        tap.cancelsTouchesInView = false
-        self.view.addGestureRecognizer(tap)&lt;/p&gt;
-
-&lt;p&gt;第二步：在viewDidLoad()下面写hideKeyboard
-@objc func hideKeyboard(tapG:UITapGestureRecognizer){
-        self.view.endEditing(true)
-    }&lt;/p&gt;
 </description>
     </item>
     

@@ -22,15 +22,5 @@
 import UIKit class ViewController: UIViewController { override func viewDidLoad() { super.viewDidLoad() // 点击空白隐藏键盘 let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboard(tapG:))) tap.cancelsTouchesInView = false self.view.addGestureRecognizer(tap) } // MARK: 隐藏键盘方法实现 @objc func hideKeyboard(tapG:UITapGestureRecognizer){ self.view.endEditing(true) } }  备注  “#”后面的内容不是注释哦，只有“//”后面的内容是注释 “// MARK: ”超好用，就像是目录一样，点击顶部文件名后面一个图标，就会出现MARK标注的注释   </description>
     </item>
     
-    <item>
-      <title>【iOS小白】APP首次启动的初始设置界面</title>
-      <link>https://meow-stars.github.io/2019/20190721/</link>
-      <pubDate>Sun, 21 Jul 2019 22:56:54 +0800</pubDate>
-      
-      <guid>https://meow-stars.github.io/2019/20190721/</guid>
-      <description>新建project 新建storyboard  选中项目文件，快捷键command+N，或者File &amp;gt;&amp;gt; New &amp;gt;&amp;gt; File 选择iOS &amp;gt;&amp;gt; User Interface &amp;gt;&amp;gt; Storyboard 【图片】 【图片】 新建Cocoa Touch Class文件 【图片】 【图片】 将其重命名为InitialLaunch.swift 【图片】 打开InitialLaunch，从Library中拖入一个View Controller 【图片】 选中新建的View Controller 【图片】 在最右侧Inspector面板中，选择第三个Identity inspector，将Class和Storyboard ID均改为InitialLaunch，回车使修改生效， 【图片】  代码1 创建swift文件扩展UserDefaults
-import Foundation import UIKit extension UserDefaults { // MARK: 应用第一次启用 static func isFirstLaunch() -&amp;gt; Bool { let hasBeenLaunched = &amp;quot;hasBeenLaunched&amp;quot; let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched) if isFirstLaunch { UserDefaults.standard.set(true, forKey: hasBeenLaunched) UserDefaults.standard.synchronize() } return isFirstLaunch } }  代码2 打开文件AppDelegate.</description>
-    </item>
-    
   </channel>
 </rss>
