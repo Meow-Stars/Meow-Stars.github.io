@@ -13,13 +13,24 @@
     
     <item>
       <title>【iOS】Swift隐藏键盘</title>
-      <link>https://meow-stars.github.io/2020/20200120/</link>
+      <link>https://meow-stars.github.io/2020/20200121/</link>
       <pubDate>Tue, 21 Jan 2020 17:29:16 +0800</pubDate>
       
-      <guid>https://meow-stars.github.io/2020/20200120/</guid>
+      <guid>https://meow-stars.github.io/2020/20200121/</guid>
       <description> 在开发过程中，经常会遇到需要使用文本输入框的情况，一般点击输入框就会弹出键盘，但是键盘的回收就很不友好了，网上找了找还都是Swift3时代的代码，和现在的Swift5根本就是天差地别，简直就是在欺负我们纯纯的小白。
 点击空白隐藏键盘 注意把ViewController替换成自己的ViewController名称，不然不会生效哦。
-import UIKit class ViewController: UIViewController { override func viewDidLoad() { super.viewDidLoad() // 点击空白隐藏键盘 let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboard(tapG:))) tap.cancelsTouchesInView = false self.view.addGestureRecognizer(tap) } // MARK: 隐藏键盘方法实现 @objc func hideKeyboard(tapG:UITapGestureRecognizer){ self.view.endEditing(true) } }  备注  “#”后面的内容不是注释哦，只有“//”后面的内容是注释 “// MARK: ”超好用，就像是目录一样，点击顶部文件名后面一个图标，就会出现MARK标注的注释   </description>
+import UIKit class ViewController: UIViewController { override func viewDidLoad() { super.viewDidLoad() // 点击空白隐藏键盘 let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboard(tapG:))) tap.cancelsTouchesInView = false self.view.addGestureRecognizer(tap) } // MARK: 隐藏键盘方法实现 @objc func hideKeyboard(tapG:UITapGestureRecognizer){ self.view.endEditing(true) } }  备注  “#”后面的内容不是注释哦，只有“//”后面是注释 “// MARK: ”超好用，就像是目录一样，点击顶部文件名后面一个图标，就会出现MARK标注的注释   </description>
+    </item>
+    
+    <item>
+      <title>【iOS】判断APP是否第一次启动</title>
+      <link>https://meow-stars.github.io/2020/20200111/</link>
+      <pubDate>Sat, 11 Jan 2020 22:56:54 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/2020/20200111/</guid>
+      <description>New  File 2. 选择iOS  User Interface  Storyboard 【图片】 【图片】 3. 新建Cocoa Touch Class文件 【图片】 【图片】 4. 将其重命名为InitialLaunch.swift 【图片】 5. 打开InitialLaunch，从Library中拖入一个View Controller 【图片】 6. 选中新建的View Controller 【图片】 7. 在最右侧Inspector面板中，选择第三个Identity inspector，将Class和Storyboard ID均改为InitialLaunch，回车使修改生效， 【图片】 -- 当首次打开一个APP或者出现大的版本更新时，一般会出现一个引导界面，指导使用或者介绍新功能，这就需要判断APP是否是第一次使用。
+判断APP第一次启动 步骤一 创建swift文件ExtensionUserDefaults.swift，扩展UserDefaults
+import Foundation import UIKit extension UserDefaults { // MARK: 应用第一次启用 static func isFirstLaunch() -&amp;gt; Bool { let hasBeenLaunched = &amp;quot;hasBeenLaunched&amp;quot; let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched) if isFirstLaunch { UserDefaults.standard.set(true, forKey: hasBeenLaunched) UserDefaults.</description>
     </item>
     
   </channel>

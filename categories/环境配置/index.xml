@@ -6,17 +6,17 @@
     <description>Recent content in 环境•配置 on 喵星澜 ~ MeowStars</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 27 Jun 2019 22:28:17 +0800</lastBuildDate>
+    <lastBuildDate>Tue, 27 Aug 2019 22:28:17 +0800</lastBuildDate>
     
 	<atom:link href="https://meow-stars.github.io/categories/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hugo搭建个人博客（三）—— Github绑定顶级域名</title>
-      <link>https://meow-stars.github.io/2019/20190627/</link>
-      <pubDate>Thu, 27 Jun 2019 22:28:17 +0800</pubDate>
+      <link>https://meow-stars.github.io/2019/20190827/</link>
+      <pubDate>Tue, 27 Aug 2019 22:28:17 +0800</pubDate>
       
-      <guid>https://meow-stars.github.io/2019/20190627/</guid>
+      <guid>https://meow-stars.github.io/2019/20190827/</guid>
       <description>域名注册 这个就不细讲了，国内阿里云、腾讯云都挺好的，随便挑吧，看哪个优惠力度大。
 我选的阿里云，因为.info域名阿里云第一年更便宜。
 域名解析 域名注册好后，要将域名解析到博客上才能使用。
@@ -25,19 +25,19 @@
     
     <item>
       <title>Hugo搭建个人博客（二）—— 托管到Github</title>
-      <link>https://meow-stars.github.io/2019/20190626/</link>
-      <pubDate>Wed, 26 Jun 2019 14:17:47 +0800</pubDate>
+      <link>https://meow-stars.github.io/2019/20190826/</link>
+      <pubDate>Mon, 26 Aug 2019 14:17:47 +0800</pubDate>
       
-      <guid>https://meow-stars.github.io/2019/20190626/</guid>
+      <guid>https://meow-stars.github.io/2019/20190826/</guid>
       <description>创建Github仓库（repo、repository）  登录Github账号（默认已经拥有Github账号，没有就注册一个） 点击右上角头像，选择Your repositories  选择绿色的按钮New 在Repository name填入仓库名称，一定要是yourName.github.io的形式，将yourName替换成你的Github用户名。其它什么都不要做，直接按Create repository  新创建好的仓库如图所示： 注意红框中的信息，这是仓库地址，一会要用到  使用Git上传内容到仓库  打开终端，转到站点根目录  cd MySite   运行服务器，其中yourName自行替换为Github用户名  hugo --theme=LeaveIt --baseUrl=&amp;quot;https://yourName.github.io/&amp;quot;   执行完后会在MySite下创建一个名为public的文件夹，这是要上传内容的根目录  cd public   执行以下内容：   touch README.md git init	//初始化本地仓库 git add README.md git commit -m &amp;quot;first commit&amp;quot; git remote add origin git@github.com:xxx/xxx.github.io.git //将git@github.com:xxx/xxx.github.io.git替换为上图红框中内容 git add -A git push -u origin master	//-u表示第一次提交，如果不是第一次不要加-u   命令成功执行后终端会显示类似如下内容：  打开Github仓库，会发现仓库变成了这样：  在浏览器中访问https://meow-stars.</description>
     </item>
     
     <item>
       <title>Hugo搭建个人博客（一）—— 本地运行</title>
-      <link>https://meow-stars.github.io/2019/20190625/</link>
-      <pubDate>Tue, 25 Jun 2019 16:10:57 +0800</pubDate>
+      <link>https://meow-stars.github.io/2019/20190825/</link>
+      <pubDate>Sun, 25 Aug 2019 16:10:57 +0800</pubDate>
       
-      <guid>https://meow-stars.github.io/2019/20190625/</guid>
+      <guid>https://meow-stars.github.io/2019/20190825/</guid>
       <description>前言 搭建个人博客这个想法，最先起源于Ulysess更新，它告诉我，可以直接在Ulysess中发布Ghost博客，我想既然订阅了Ulysess，总要让它物尽其用，然后就兴致冲冲地开始查找资料。 然后发现，Ghost的数据库要求是MySQL5，然而几个月前我做数据库作业时，毫不犹豫安装了MySQL8.0.15，想想算了吧，于是又把目光瞄向了WordPress。 在挑选WordPress主题时，这款Hugo的主题LeaveIt惊艳了我，于是使用Hugo搭建博客这件事，就这么愉快地决定了。
 开始 安装 我用的是MAC OS系统，以前安装过homebrew，所以安装Hugo非常简单，直接打开终端，输入：
 brew install hugo  可以通过hugo version语句查看Hugo版本。

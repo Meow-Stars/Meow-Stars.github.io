@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="喵星澜">
+  
+  
+  
+  <link rel="prev" href="https://meow-stars.github.io/2020/20200111/" />
+  
+  <link rel="canonical" href="https://meow-stars.github.io/2020/20200121/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           【iOS】Swift隐藏键盘 | 喵星澜 ~ MeowStars
+       
+  </title>
+  <meta name="title" content="【iOS】Swift隐藏键盘 | 喵星澜 ~ MeowStars">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/meow-stars.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "【iOS】Swift隐藏键盘",
+    "headline" : "【iOS】Swift隐藏键盘",
+    "description" : " 在开发过程中，经常会遇到需要使用文本输入框的情况，一般点击输入框就会弹出键盘，但是键盘的回收就很不友好了，网上找了找还都是Swift3时代的代码，和现在的Swift5根本就是天差地别，简直就是在欺负我们纯纯的小白。\n点击空白隐藏键盘 注意把ViewController替换成自己的ViewController名称，不然不会生效哦。\nimport UIKit class ViewController: UIViewController { override func viewDidLoad() { super.viewDidLoad() \/\/ 点击空白隐藏键盘 let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboard(tapG:))) tap.cancelsTouchesInView = false self.view.addGestureRecognizer(tap) } \/\/ MARK: 隐藏键盘方法实现 @objc func hideKeyboard(tapG:UITapGestureRecognizer){ self.view.endEditing(true) } }  备注  “#”后面的内容不是注释哦，只有“\/\/”后面是注释 “\/\/ MARK: ”超好用，就像是目录一样，点击顶部文件名后面一个图标，就会出现MARK标注的注释   ",
+    "inLanguage" : "en-us",
+    "author" : "喵星澜",
+    "creator" : "喵星澜",
+    "publisher": "喵星澜",
+    "accountablePerson" : "喵星澜",
+    "copyrightHolder" : "喵星澜",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-21 17:29:16 \x2b0800 CST",
+    "dateModified" : "2020-01-21 17:29:16 \x2b0800 CST",
+    "url" : "https:\/\/meow-stars.github.io\/2020\/20200121\/",
+    "wordCount" : "42",
+    "keywords" : [ "iOS","XCode", "喵星澜 ~ MeowStars"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">喵星澜 ~ MeowStars</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">喵星澜 ~ MeowStars</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">【iOS】Swift隐藏键盘</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://meow-stars.github.io/" rel="author">喵星澜</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-01-21 itemprop="datePublished">January 21, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://meow-stars.github.io/categories/iosswift/"> iOS•Swift </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<p>在开发过程中，经常会遇到需要使用文本输入框的情况，一般点击输入框就会弹出键盘，但是键盘的回收就很不友好了，网上找了找还都是Swift3时代的代码，和现在的Swift5根本就是天差地别，简直就是在欺负我们纯纯的小白。</p>
+
+<h2 id="点击空白隐藏键盘">点击空白隐藏键盘</h2>
+
+<p>注意<strong>把ViewController替换成自己的ViewController名称</strong>，不然不会生效哦。</p>
+
+<pre><code class="language-Swift">import UIKit
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // 点击空白隐藏键盘
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboard(tapG:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    // MARK: 隐藏键盘方法实现
+    @objc func hideKeyboard(tapG:UITapGestureRecognizer){
+        self.view.endEditing(true)
+    }
+}
+</code></pre>
+
+<h3 id="备注">备注</h3>
+
+<ol>
+<li>“#”后面的内容不是注释哦，只有“//”后面是注释</li>
+<li>“// MARK: ”超好用，就像是目录一样，点击顶部文件名后面一个图标，就会出现MARK标注的注释
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://pic.downk.cc/item/5e26ceab2fb38b8c3cb9e8e2.png" alt="就像这样子滴" class="lazyload"><figcaption class="image-caption">就像这样子滴</figcaption></figure></li>
+</ol>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>喵星澜 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://meow-stars.github.io/2020/20200121/>https://meow-stars.github.io/2020/20200121/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/ios/">
+                    #iOS</a></span>
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/xcode/">
+                    #XCode</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://meow-stars.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://meow-stars.github.io/2020/20200111/" class="prev" rel="prev" title="【iOS】判断APP是否第一次启动"><i class="iconfont icon-left"></i>&nbsp;【iOS】判断APP是否第一次启动</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://meow-stars.github.io/">喵星澜</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
