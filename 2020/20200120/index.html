@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://meow-stars.github.io/2019/20190702/" />
-  <link rel="next" href="https://meow-stars.github.io/2020/20200120/" />
-  <link rel="canonical" href="https://meow-stars.github.io/2019/20190721/" />
+  <link rel="prev" href="https://meow-stars.github.io/2019/20190721/" />
+  
+  <link rel="canonical" href="https://meow-stars.github.io/2020/20200120/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           【iOS小白】APP首次启动的初始设置界面 | 喵星澜 ~ MeowStars
+           【iOS】Swift隐藏键盘 | 喵星澜 ~ MeowStars
        
   </title>
-  <meta name="title" content="【iOS小白】APP首次启动的初始设置界面 | 喵星澜 ~ MeowStars">
+  <meta name="title" content="【iOS】Swift隐藏键盘 | 喵星澜 ~ MeowStars">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,21 +44,21 @@
          "@id": "https:\/\/meow-stars.github.io\/"
     },
     "articleSection" : "posts",
-    "name" : "【iOS小白】APP首次启动的初始设置界面",
-    "headline" : "【iOS小白】APP首次启动的初始设置界面",
-    "description" : "新建project 新建storyboard  选中项目文件，快捷键command\x2bN，或者File \x26gt;\x26gt; New \x26gt;\x26gt; File 选择iOS \x26gt;\x26gt; User Interface \x26gt;\x26gt; Storyboard 【图片】 【图片】 新建Cocoa Touch Class文件 【图片】 【图片】 将其重命名为InitialLaunch.swift 【图片】 打开InitialLaunch，从Library中拖入一个View Controller 【图片】 选中新建的View Controller 【图片】 在最右侧Inspector面板中，选择第三个Identity inspector，将Class和Storyboard ID均改为InitialLaunch，回车使修改生效， 【图片】  代码1 创建swift文件扩展UserDefaults\nimport Foundation import UIKit extension UserDefaults { \/\/ MARK: 应用第一次启用 static func isFirstLaunch() -\x26gt; Bool { let hasBeenLaunched = \x26quot;hasBeenLaunched\x26quot; let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched) if isFirstLaunch { UserDefaults.standard.set(true, forKey: hasBeenLaunched) UserDefaults.standard.synchronize() } return isFirstLaunch } }  代码2 打开文件AppDelegate.",
+    "name" : "【iOS】Swift隐藏键盘",
+    "headline" : "【iOS】Swift隐藏键盘",
+    "description" : " 在开发过程中，经常会遇到需要使用文本输入框的情况，一般点击输入框就会弹出键盘，但是键盘的回收就很不友好了，网上找了找还都是Swift3时代的代码，和现在的Swift5根本就是天差地别，简直就是在欺负我们纯纯的小白。\n点击空白隐藏键盘 注意把ViewController替换成自己的ViewController名称，不然不会生效哦。\nimport UIKit class ViewController: UIViewController { override func viewDidLoad() { super.viewDidLoad() \/\/ 点击空白隐藏键盘 let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboard(tapG:))) tap.cancelsTouchesInView = false self.view.addGestureRecognizer(tap) } \/\/ MARK: 隐藏键盘方法实现 @objc func hideKeyboard(tapG:UITapGestureRecognizer){ self.view.endEditing(true) } }  备注  “#”后面的内容不是注释哦，只有“\/\/”后面的内容是注释 “\/\/ MARK: ”超好用，就像是目录一样，点击顶部文件名后面一个图标，就会出现MARK标注的注释   ",
     "inLanguage" : "en-us",
     "author" : "喵星澜",
     "creator" : "喵星澜",
     "publisher": "喵星澜",
     "accountablePerson" : "喵星澜",
     "copyrightHolder" : "喵星澜",
-    "copyrightYear" : "2019",
-    "datePublished": "2019-07-21 22:56:54 \x2b0800 CST",
-    "dateModified" : "2019-07-21 22:56:54 \x2b0800 CST",
-    "url" : "https:\/\/meow-stars.github.io\/2019\/20190721\/",
-    "wordCount" : "107",
-    "keywords" : [ "xcode", "喵星澜 ~ MeowStars"]
+    "copyrightYear" : "2020",
+    "datePublished": "2020-01-21 17:29:16 \x2b0800 CST",
+    "dateModified" : "2020-01-21 17:29:16 \x2b0800 CST",
+    "url" : "https:\/\/meow-stars.github.io\/2020\/20200120\/",
+    "wordCount" : "42",
+    "keywords" : [ "iOS","XCode", "喵星澜 ~ MeowStars"]
 }
 </script>
 
@@ -116,11 +116,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">【iOS小白】APP首次启动的初始设置界面</h1>
+        <h1 class="post-title" itemprop="name headline">【iOS】Swift隐藏键盘</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://meow-stars.github.io/" rel="author">喵星澜</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2019-07-21 itemprop="datePublished">July 21, 2019</time>
+                on <time datetime=2020-01-21 itemprop="datePublished">January 21, 2020</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
@@ -133,6 +133,8 @@
     <div class="post-content">
         
 
+        
+            
         
 
         
@@ -148,64 +150,35 @@
 
           
 
-<h2 id="新建project">新建project</h2>
+<p>在开发过程中，经常会遇到需要使用文本输入框的情况，一般点击输入框就会弹出键盘，但是键盘的回收就很不友好了，网上找了找还都是Swift3时代的代码，和现在的Swift5根本就是天差地别，简直就是在欺负我们纯纯的小白。</p>
 
-<h2 id="新建storyboard">新建storyboard</h2>
+<h2 id="点击空白隐藏键盘">点击空白隐藏键盘</h2>
+
+<p>注意<strong>把ViewController替换成自己的ViewController名称</strong>，不然不会生效哦。</p>
+
+<pre><code class="language-Swift">import UIKit
+class ViewController: UIViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // 点击空白隐藏键盘
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboard(tapG:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
+    }
+    // MARK: 隐藏键盘方法实现
+    @objc func hideKeyboard(tapG:UITapGestureRecognizer){
+        self.view.endEditing(true)
+    }
+}
+</code></pre>
+
+<h3 id="备注">备注</h3>
 
 <ol>
-<li>选中项目文件，快捷键command+N，或者File &gt;&gt; New &gt;&gt; File</li>
-<li>选择iOS &gt;&gt; User Interface &gt;&gt; Storyboard
-【图片】
-【图片】</li>
-<li>新建Cocoa Touch Class文件
-【图片】
-【图片】</li>
-<li>将其重命名为InitialLaunch.swift
-【图片】</li>
-<li>打开InitialLaunch，从Library中拖入一个View Controller
-【图片】</li>
-<li>选中新建的View Controller
-【图片】</li>
-<li>在最右侧Inspector面板中，选择第三个Identity inspector，将Class和Storyboard ID均改为InitialLaunch，回车使修改生效，
-【图片】</li>
+<li>“#”后面的内容不是注释哦，只有“//”后面的内容是注释</li>
+<li>“// MARK: ”超好用，就像是目录一样，点击顶部文件名后面一个图标，就会出现MARK标注的注释
+<figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://pic.downk.cc/item/5e26ceab2fb38b8c3cb9e8e2.png" alt="就像这样子滴" class="lazyload"><figcaption class="image-caption">就像这样子滴</figcaption></figure></li>
 </ol>
-
-<h2 id="代码1">代码1</h2>
-
-<p>创建swift文件扩展UserDefaults</p>
-
-<pre><code class="language-swift">import Foundation
-import UIKit
-
-extension UserDefaults {
-    // MARK: 应用第一次启用
-    static func isFirstLaunch() -&gt; Bool {
-        let hasBeenLaunched = &quot;hasBeenLaunched&quot;
-        let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched)
-        if isFirstLaunch {
-            UserDefaults.standard.set(true, forKey: hasBeenLaunched)
-            UserDefaults.standard.synchronize()
-        }
-        return isFirstLaunch
-    }
-}
-
-</code></pre>
-
-<h2 id="代码2">代码2</h2>
-
-<p>打开文件AppDelegate.swift，修改函数application()</p>
-
-<pre><code class="language-swift">func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
-    // 判断APP第一次启动
-    if UserDefaults.isFirstLaunch() {
-        print(&quot;这是第一次启动&quot;)
-        let initialLaunch = UIStoryboard(name: &quot;InitialLaunch&quot;, bundle: nil).instantiateViewController(withIdentifier: &quot;InitialLaunch&quot;) as UIViewController
-        self.window!.rootViewController = initialLaunch
-    }
-    return true
-}
-</code></pre>
 
     </div>
 
@@ -220,7 +193,7 @@ extension UserDefaults {
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://meow-stars.github.io/2019/20190721/>https://meow-stars.github.io/2019/20190721/</span>
+                    <a href=https://meow-stars.github.io/2020/20200120/>https://meow-stars.github.io/2020/20200120/</span>
             </p>
             
              
@@ -236,8 +209,11 @@ extension UserDefaults {
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
+            <span class="tag"><a href="https://meow-stars.github.io/tags/ios/">
+                    #iOS</a></span>
+            
             <span class="tag"><a href="https://meow-stars.github.io/tags/xcode/">
-                    #xcode</a></span>
+                    #XCode</a></span>
             
             </section>
         
@@ -249,10 +225,8 @@ extension UserDefaults {
 
     <div class="post-nav">
         
-        <a href="https://meow-stars.github.io/2019/20190702/" class="prev" rel="prev" title="Sketch安装插件"><i class="iconfont icon-left"></i>&nbsp;Sketch安装插件</a>
+        <a href="https://meow-stars.github.io/2019/20190721/" class="prev" rel="prev" title="【iOS小白】APP首次启动的初始设置界面"><i class="iconfont icon-left"></i>&nbsp;【iOS小白】APP首次启动的初始设置界面</a>
          
-        
-        <a href="https://meow-stars.github.io/2020/20200120/" class="next" rel="next" title="【iOS】Swift隐藏键盘">【iOS】Swift隐藏键盘&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -294,8 +268,9 @@ extension UserDefaults {
 
 
     
-    
-    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
     
   
 
