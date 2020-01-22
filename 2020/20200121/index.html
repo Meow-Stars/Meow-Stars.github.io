@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "【iOS】Swift隐藏键盘",
     "headline" : "【iOS】Swift隐藏键盘",
-    "description" : " 在开发过程中，经常会遇到需要使用文本输入框的情况，一般点击输入框就会弹出键盘，但是键盘的回收就很不友好了，网上找了找还都是Swift3时代的代码，和现在的Swift5根本就是天差地别，简直就是在欺负我们纯纯的小白。\n点击空白隐藏键盘 注意把ViewController替换成自己的ViewController名称，不然不会生效哦。\nimport UIKit class ViewController: UIViewController { override func viewDidLoad() { super.viewDidLoad() \/\/ 点击空白隐藏键盘 let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboard(tapG:))) tap.cancelsTouchesInView = false self.view.addGestureRecognizer(tap) } \/\/ MARK: 隐藏键盘方法实现 @objc func hideKeyboard(tapG:UITapGestureRecognizer){ self.view.endEditing(true) } }  备注  “#”后面的内容不是注释哦，只有“\/\/”后面是注释 “\/\/ MARK: ”超好用，就像是目录一样，点击顶部文件名后面一个图标，就会出现MARK标注的注释   ",
+    "description" : "在开发过程中，经常会遇到需要使用文本输入框的情况，一般点击输入框就会弹出键盘，但是键盘的回收就很不友好了，网上找了找还都是Swift3时代的代码，和现在的Swift5根本就是天差地别，简直就是在欺负我们纯纯的小白。\n点击空白隐藏键盘 注意把ViewController替换成自己的ViewController名称，不然不会生效哦。\nimport UIKit class ViewController: UIViewController { override func viewDidLoad() { super.viewDidLoad() \/\/ 点击空白隐藏键盘 let tap = UITapGestureRecognizer(target: self, action: #selector(ViewController.hideKeyboard(tapG:))) tap.cancelsTouchesInView = false self.view.addGestureRecognizer(tap) } \/\/ MARK: 隐藏键盘方法实现 @objc func hideKeyboard(tapG:UITapGestureRecognizer){ self.view.endEditing(true) } }  备注  “#”后面的内容不是注释哦，只有“\/\/”后面是注释 “\/\/ MARK: ”超好用，就像是目录一样，点击顶部文件名后面一个图标，就会出现MARK标注的注释   点击键盘右下角Return键隐藏 通过委托放弃第一响应者身份来实现键盘回收\nUITextView import UIKit class ViewController: UIViewController，UITextViewDelegate { override func viewDidLoad() { super.viewDidLoad() addTextView() } func addTextView(){ let Text = UITextView(frame: CGRect(x:10, y:10, width:200, height:50)) questionText.",
     "inLanguage" : "en-us",
     "author" : "喵星澜",
     "creator" : "喵星澜",
@@ -57,7 +57,7 @@
     "datePublished": "2020-01-21 17:29:16 \x2b0800 CST",
     "dateModified" : "2020-01-21 17:29:16 \x2b0800 CST",
     "url" : "https:\/\/meow-stars.github.io\/2020\/20200121\/",
-    "wordCount" : "42",
+    "wordCount" : "158",
     "keywords" : [ "iOS","XCode", "喵星澜 ~ MeowStars"]
 }
 </script>
@@ -179,6 +179,57 @@ class ViewController: UIViewController {
 <li>“// MARK: ”超好用，就像是目录一样，点击顶部文件名后面一个图标，就会出现MARK标注的注释
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://pic.downk.cc/item/5e26ceab2fb38b8c3cb9e8e2.png" alt="就像这样子滴" class="lazyload"><figcaption class="image-caption">就像这样子滴</figcaption></figure></li>
 </ol>
+
+<h2 id="点击键盘右下角return键隐藏">点击键盘右下角Return键隐藏</h2>
+
+<p>通过委托放弃第一响应者身份来实现键盘回收</p>
+
+<h3 id="uitextview">UITextView</h3>
+
+<pre><code class="language-Swift">import UIKit
+class ViewController: UIViewController，UITextViewDelegate {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addTextView()
+    }
+    func addTextView(){
+        let Text = UITextView(frame: CGRect(x:10, y:10, width:200, height:50))
+        questionText.delegate = self		  // 重要重要重要！！！
+        questionText.keyboardType = .default  // 键盘样式为默认
+        view.addSubview(questionText)
+    }
+    // MARK: UITextView点击键盘右下角隐藏键盘
+    func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -&gt; Bool {
+        if text == &quot;\n&quot; {
+            textView.resignFirstResponder()
+            return false
+        }
+        return true
+    }
+}
+</code></pre>
+
+<h3 id="uitextfield">UITextField</h3>
+
+<pre><code class="language-Swift">import UIKit
+class ViewController: UIViewController，UITextFieldDelegate {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addTextField()
+    }
+    func addTextField(){
+        let Text = UITextField(frame: CGRect(x:10, y:10, width:200, height:50))
+        questionText.delegate = self		  // 重要重要重要！！！
+        questionText.keyboardType = .default  
+        view.addSubview(questionText)
+    }
+    // MARK: UITextField点击键盘右下角隐藏键盘
+    func textFieldShouldReturn(_ textField: UITextField) -&gt; Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+}
+</code></pre>
 
     </div>
 
