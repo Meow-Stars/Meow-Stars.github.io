@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="喵星澜">
+  
+  
+  
+  <link rel="prev" href="https://meow-stars.github.io/2020/20200131/" />
+  
+  <link rel="canonical" href="https://meow-stars.github.io/2020/20200202/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           【iOS】创建一个ToDoList APP(二) | 喵星澜 ~ MeowStars
+       
+  </title>
+  <meta name="title" content="【iOS】创建一个ToDoList APP(二) | 喵星澜 ~ MeowStars">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/meow-stars.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "【iOS】创建一个ToDoList APP(二)",
+    "headline" : "【iOS】创建一个ToDoList APP(二)",
+    "description" : "上一篇是静态的，cell的数目、显示的内容都是固定的，现在将其扩展成动态，可以实现添加、删除\n新建按钮，跳转输入界面 为了美观，就在主界面的导航栏右侧新增了一个按钮\n 新建UIViewController，取名AddScreen\n AppDelegate.swift，注意要设置StoryboardID\n  func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -\x26gt; Bool { \/\/ 添加对导航栏的支持 let initialLaunch = UIStoryboard(name: \x26quot;Main\x26quot;, bundle: nil).instantiateViewController(withIdentifier: \x26quot;ViewController\x26quot;) as UIViewController let navigationVC = UINavigationController(rootViewController: initialLaunch) self.window!.rootViewController = navigationVC return true }   ViewController.swift，创建导航栏  func setNavigationBar(){ self.title = \x26quot;ToDoList\x26quot; self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(AddItem)) } \/\/ Add按钮 @objc func AddItem(){ let AddScreenVC = AddScreen() AddScreenVC.",
+    "inLanguage" : "en-us",
+    "author" : "喵星澜",
+    "creator" : "喵星澜",
+    "publisher": "喵星澜",
+    "accountablePerson" : "喵星澜",
+    "copyrightHolder" : "喵星澜",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-02-02 16:12:54 \x2b0800 CST",
+    "dateModified" : "2020-02-02 16:12:54 \x2b0800 CST",
+    "url" : "https:\/\/meow-stars.github.io\/2020\/20200202\/",
+    "wordCount" : "589",
+    "keywords" : [ "iOS","XCode","Swift", "喵星澜 ~ MeowStars"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">喵星澜 ~ MeowStars</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">喵星澜 ~ MeowStars</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">【iOS】创建一个ToDoList APP(二)</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://meow-stars.github.io/" rel="author">喵星澜</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-02-02 itemprop="datePublished">February 2, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://meow-stars.github.io/categories/iosswift/"> iOS•Swift </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<p>上一篇是静态的，cell的数目、显示的内容都是固定的，现在将其扩展成动态，可以实现添加、删除</p>
+
+<h2 id="新建按钮-跳转输入界面">新建按钮，跳转输入界面</h2>
+
+<p>为了美观，就在主界面的导航栏右侧新增了一个按钮</p>
+
+<ul>
+<li><p>新建UIViewController，取名AddScreen</p></li>
+
+<li><p>AppDelegate.swift，注意要设置StoryboardID</p></li>
+</ul>
+
+<pre><code class="language-Swift">func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
+    // 添加对导航栏的支持
+    let initialLaunch = UIStoryboard(name: &quot;Main&quot;, bundle: nil).instantiateViewController(withIdentifier: &quot;ViewController&quot;) as UIViewController
+    let navigationVC = UINavigationController(rootViewController: initialLaunch)
+    self.window!.rootViewController = navigationVC
+    return true
+}
+</code></pre>
+
+<ul>
+<li>ViewController.swift，创建导航栏</li>
+</ul>
+
+<pre><code class="language-Swift">func setNavigationBar(){
+    self.title = &quot;ToDoList&quot;
+    self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(AddItem))
+}
+// Add按钮
+@objc func AddItem(){
+    let AddScreenVC = AddScreen()
+    AddScreenVC.delegate = self
+    self.present(AddScreenVC, animated: true, completion: nil)
+}
+</code></pre>
+
+<h2 id="addscreen-swift">AddScreen.swift</h2>
+
+<ul>
+<li>添加协议</li>
+</ul>
+
+<pre><code class="language-Swift">protocol AddProtocal {
+    func didCompleted(addObject: AddScreen)
+}
+</code></pre>
+
+<ul>
+<li><p>添加控件，一个UILabel，一个UITextField，一个UIButton</p></li>
+
+<li><p>如果输入框为空，点击按钮输入框会抖动</p></li>
+</ul>
+
+<h3 id="完整addscreen-swift">完整AddScreen.swift</h3>
+
+<pre><code class="language-Swift">import UIKit
+
+protocol AddProtocal {
+    func didCompleted(addObject: AddScreen)
+}
+
+class AddScreen: UIViewController,UITextFieldDelegate {
+    var toDoLabel: UILabel!
+    var toDoField: UITextField!
+    var completeButton: UIButton!
+    var delegate: AddProtocal?
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = UIColor.white
+        addUI()
+    }
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+    }
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        setUp()
+    }
+    func addUI(){
+    	// UILabel
+        toDoLabel = UILabel(frame: CGRect(x: fullScreenSize.width*0.15, y: fullScreenSize.height*0.05, width: fullScreenSize.width*0.7, height: fullScreenSize.height*0.1))
+        toDoLabel.text = &quot;ToDo&quot;
+        toDoLabel.font = UIFont.systemFont(ofSize: 20)
+        self.view.addSubview(toDoLabel)
+        // UITextField
+        toDoField = UITextField(frame: CGRect(x: fullScreenSize.width*0.15, y: fullScreenSize.height*0.1, width: fullScreenSize.width*0.7, height: fullScreenSize.height*0.3))
+        toDoField.placeholder = &quot;请输入待办事项&quot;            // 提示语
+        toDoField.delegate = self
+        toDoField.font = UIFont.systemFont(ofSize: 20)
+        self.view.addSubview(toDoField)
+        // UIButton
+        completeButton = UIButton(type: .system)
+        completeButton.frame = CGRect(x: fullScreenSize.width*0.2, y: fullScreenSize.height*0.7, width: fullScreenSize.width*0.6, height: 50)
+        completeButton.layer.cornerRadius = 5.0
+        completeButton.backgroundColor = UIColor.blue
+        completeButton.addTarget(self, action: #selector(CompleteType(sender:)), for: .touchDown)
+        self.view.addSubview(completeButton)
+    }
+    @objc func CompleteType(sender: AnyObject){
+        // 完成输入
+        if toDoField.text!.count &gt; 0{
+            delegate?.didCompleted(addObject: self)
+            self.dismiss(animated: true, completion: nil)
+        }
+        // 如果输入为空则输入框抖动
+        else{   
+            shakeAnimation(sender: toDoField)
+        }
+    }
+    func setUp(){
+        if delegate == nil{
+            toDoField.textColor = UIColor.lightGray
+            toDoField.isUserInteractionEnabled = false
+            completeButton.setTitle(&quot;完成&quot;, for: .normal)
+        }
+        else{
+            toDoField.textColor = UIColor.black
+            toDoField.isUserInteractionEnabled = true
+            completeButton.setTitle(&quot;OK&quot;, for: .normal)
+        }
+    }
+    //  UITextField点击右下角回收键盘
+    func textFieldShouldReturn(_ textField: UITextField) -&gt; Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    // 没有输入则输入框抖动动画
+    func shakeAnimation(sender: AnyObject){
+        let animation = CAKeyframeAnimation()
+        animation.keyPath = &quot;position.x&quot;
+        animation.values = [0,10,-10,10,0]
+        animation.keyTimes = [0,1/6.0,3/6.0,5/6.0,1] as [NSNumber]
+        animation.duration = 0.4
+        animation.isAdditive = true
+        sender.layer?.add(animation, forKey: &quot;shake&quot;)
+    }
+}
+</code></pre>
+
+<h2 id="回到viewcontroller-swift">回到ViewController.swift</h2>
+
+<ul>
+<li>完成protocal中的函数</li>
+</ul>
+
+<pre><code class="language-Swift">func didCompleted(addObject: AddScreen) {
+    toDoData.append(addObject)
+    tableView.reloadData()
+}	
+</code></pre>
+
+<ul>
+<li>修改相关细节</li>
+</ul>
+
+<h3 id="完整viewcontroller-swift">完整ViewController.swift</h3>
+
+<pre><code class="language-Swift">import UIKit
+
+class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate,AddProtocal {
+    var tableView: UITableView!
+    let cellIdentify = &quot;Cell&quot;
+    var toDoData = [AddScreen]()
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setNavigationBar()
+        setTableView()
+        registerCell()
+    }
+  
+    // 创建导航栏
+    func setNavigationBar(){
+        self.title = &quot;ToDoList&quot;
+        self.navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(AddItem))
+    }
+    // Add按钮
+    @objc func AddItem(){
+        let AddScreenVC = AddScreen()
+        AddScreenVC.delegate = self
+        self.present(AddScreenVC, animated: true, completion: nil)
+    }
+    override func viewWillAppear(_ animated: Bool) {
+    	// 导航栏不透明
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBar.isTranslucent = false  
+    }
+    // 创建UITableView
+    func setTableView(){
+        self.tableView = UITableView(frame: self.view.frame, style: .plain)
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.view.addSubview(tableView)
+    }
+    // 注册Cell
+    func registerCell(){
+        tableView.register(Cell.self, forCellReuseIdentifier: cellIdentify)
+    }
+    // 设置分区section数目
+    func numberOfSections(in tableView: UITableView) -&gt; Int {
+        return 1
+    }
+    // 设置cell高度
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -&gt; CGFloat {
+        return 60
+    }
+    // 设置cell数目
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+        return toDoData.count
+    }
+    // 设置cell内容
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentify) as? Cell
+        if cell == nil{
+            let nibs:Array = Bundle.main.loadNibNamed(&quot;Cell&quot;, owner: self, options: nil)!
+            cell = (nibs.last as? Cell)!
+        }
+        let addObject = toDoData[indexPath.row] as AddScreen
+        cell?.todoTitle.text = addObject.toDoField.text
+        cell?.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+        return cell!
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let AddScreenVC = toDoData[indexPath.row] as AddScreen
+        AddScreenVC.delegate = nil
+        self.present(AddScreenVC, animated: true, completion: nil)
+    }
+    // 设置cell可以滑动删除
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == UITableViewCell.EditingStyle.delete{
+            print(&quot;删除第\(indexPath.row+1)个选项&quot;)
+            toDoData.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    // 完成protocal中的函数
+    func didCompleted(addObject: AddScreen) {
+        toDoData.append(addObject)
+        tableView.reloadData()
+    }
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+}
+</code></pre>
+
+<h4 id="参考文章-swift书面todoapp-https-www-cnblogs-com-yxwkf-p-4665142-html">参考文章<a href="https://www.cnblogs.com/yxwkf/p/4665142.html" rel="nofollow noreferrer" target="_blank">Swift书面ToDoApp</a></h4>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>喵星澜 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://meow-stars.github.io/2020/20200202/>https://meow-stars.github.io/2020/20200202/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/ios/">
+                    #iOS</a></span>
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/xcode/">
+                    #XCode</a></span>
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/swift/">
+                    #Swift</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://meow-stars.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://meow-stars.github.io/2020/20200131/" class="prev" rel="prev" title="【iOS】创建一个ToDoList APP(一)"><i class="iconfont icon-left"></i>&nbsp;【iOS】创建一个ToDoList APP(一)</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://meow-stars.github.io/">喵星澜</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

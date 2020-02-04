@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://meow-stars.github.io/2019/20191002/" />
-  <link rel="next" href="https://meow-stars.github.io/2020/20200121/" />
-  <link rel="canonical" href="https://meow-stars.github.io/2020/20200111/" />
+  <link rel="prev" href="https://meow-stars.github.io/2020/20200121/" />
+  <link rel="next" href="https://meow-stars.github.io/2020/20200202/" />
+  <link rel="canonical" href="https://meow-stars.github.io/2020/20200131/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           【iOS】判断APP是否第一次启动 | 喵星澜 ~ MeowStars
+           【iOS】创建一个ToDoList APP(一) | 喵星澜 ~ MeowStars
        
   </title>
-  <meta name="title" content="【iOS】判断APP是否第一次启动 | 喵星澜 ~ MeowStars">
+  <meta name="title" content="【iOS】创建一个ToDoList APP(一) | 喵星澜 ~ MeowStars">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/meow-stars.github.io\/"
     },
     "articleSection" : "posts",
-    "name" : "【iOS】判断APP是否第一次启动",
-    "headline" : "【iOS】判断APP是否第一次启动",
-    "description" : "New  File 2. 选择iOS  User Interface  Storyboard 【图片】 【图片】 3. 新建Cocoa Touch Class文件 【图片】 【图片】 4. 将其重命名为InitialLaunch.swift 【图片】 5. 打开InitialLaunch，从Library中拖入一个View Controller 【图片】 6. 选中新建的View Controller 【图片】 7. 在最右侧Inspector面板中，选择第三个Identity inspector，将Class和Storyboard ID均改为InitialLaunch，回车使修改生效， 【图片】 -- 当首次打开一个APP或者出现大的版本更新时，一般会出现一个引导界面，指导使用或者介绍新功能，这就需要判断APP是否是第一次使用。\n判断APP第一次启动 步骤一 创建swift文件ExtensionUserDefaults.swift，扩展UserDefaults\nimport Foundation import UIKit extension UserDefaults { \/\/ MARK: 应用第一次启用 static func isFirstLaunch() -\x26gt; Bool { let hasBeenLaunched = \x26quot;hasBeenLaunched\x26quot; let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched) if isFirstLaunch { UserDefaults.standard.set(true, forKey: hasBeenLaunched) UserDefaults.",
+    "name" : "【iOS】创建一个ToDoList APP(一)",
+    "headline" : "【iOS】创建一个ToDoList APP(一)",
+    "description" : "自定义cell  创建一个Cocoa Touch Class文件，继承自UITableViewCell\n 创建Cell类\n  import UIKit class Cell: UITableViewCell{ var todoTitle: UILabel! override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) { super.init(style: style, reuseIdentifier: reuseIdentifier) self.setUpCellUI() } func setUpCellUI(){ todoTitle = UILabel(frame: CGRect(x: 30, y: 10, width: 200, height: 30)) todoTitle.font = UIFont.systemFont(ofSize: 20) self.addSubview(todoTitle!) } required init?(coder aDecoder: NSCoder) { fatalError(\x26quot;init(coder:) has not been implemented\x26quot;) } }  创建UITableView  进入ViewController.swift，创建UITableView  import UIKit class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate { var tableView: UITableView!",
     "inLanguage" : "en-us",
     "author" : "喵星澜",
     "creator" : "喵星澜",
@@ -54,10 +54,10 @@
     "accountablePerson" : "喵星澜",
     "copyrightHolder" : "喵星澜",
     "copyrightYear" : "2020",
-    "datePublished": "2020-01-11 22:56:54 \x2b0800 CST",
-    "dateModified" : "2020-01-11 22:56:54 \x2b0800 CST",
-    "url" : "https:\/\/meow-stars.github.io\/2020\/20200111\/",
-    "wordCount" : "193",
+    "datePublished": "2020-01-31 22:39:49 \x2b0800 CST",
+    "dateModified" : "2020-01-31 22:39:49 \x2b0800 CST",
+    "url" : "https:\/\/meow-stars.github.io\/2020\/20200131\/",
+    "wordCount" : "200",
     "keywords" : [ "iOS","XCode","Swift", "喵星澜 ~ MeowStars"]
 }
 </script>
@@ -116,11 +116,11 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">【iOS】判断APP是否第一次启动</h1>
+        <h1 class="post-title" itemprop="name headline">【iOS】创建一个ToDoList APP(一)</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://meow-stars.github.io/" rel="author">喵星澜</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-01-11 itemprop="datePublished">January 11, 2020</time>
+                on <time datetime=2020-01-31 itemprop="datePublished">January 31, 2020</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
@@ -148,105 +148,106 @@
 
           
 
-<!-- ## 新建storyboard -->
+<h2 id="自定义cell">自定义cell</h2>
 
-<!-- 1. 选中项目文件，快捷键command+N，或者File >> New >> File
-2. 选择iOS >> User Interface >> Storyboard
-【图片】
-【图片】
-3. 新建Cocoa Touch Class文件
-【图片】
-【图片】
-4. 将其重命名为InitialLaunch.swift
-【图片】
-5. 打开InitialLaunch，从Library中拖入一个View Controller
-【图片】
-6. 选中新建的View Controller
-【图片】
-7. 在最右侧Inspector面板中，选择第三个Identity inspector，将Class和Storyboard ID均改为InitialLaunch，回车使修改生效，
-【图片】 -->
+<ul>
+<li><p>创建一个Cocoa Touch Class文件，继承自UITableViewCell</p></li>
 
-<p>当首次打开一个APP或者出现大的版本更新时，一般会出现一个引导界面，指导使用或者介绍新功能，这就需要判断APP是否是第一次使用。</p>
+<li><p>创建Cell类</p></li>
+</ul>
 
-<h2 id="判断app第一次启动">判断APP第一次启动</h2>
+<pre><code class="language-Swift">import UIKit
+class Cell: UITableViewCell{
+    var todoTitle: UILabel!
 
-<h3 id="步骤一">步骤一</h3>
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        self.setUpCellUI()
+    }
+    func setUpCellUI(){
+        todoTitle = UILabel(frame: CGRect(x: 30, y: 10, width: 200, height: 30))
+        todoTitle.font = UIFont.systemFont(ofSize: 20)
+        self.addSubview(todoTitle!)
+        
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError(&quot;init(coder:) has not been implemented&quot;)
+    }
+}
 
-<p>创建swift文件ExtensionUserDefaults.swift，扩展UserDefaults</p>
+</code></pre>
 
-<pre><code class="language-swift">import Foundation
-import UIKit
-extension UserDefaults {
-    // MARK: 应用第一次启用
-    static func isFirstLaunch() -&gt; Bool {
-        let hasBeenLaunched = &quot;hasBeenLaunched&quot;
-        let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunched)
-        if isFirstLaunch {
-            UserDefaults.standard.set(true, forKey: hasBeenLaunched)
-            UserDefaults.standard.synchronize()
-        }
-        return isFirstLaunch
+<h2 id="创建uitableview">创建UITableView</h2>
+
+<ul>
+<li>进入ViewController.swift，创建UITableView</li>
+</ul>
+
+<pre><code class="language-Swift">import UIKit
+class ViewController: UIViewController,UITableViewDataSource,UITableViewDelegate {
+    var tableView: UITableView!
+    let cellIdentify = &quot;Cell&quot;
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        self.tableView = UITableView(frame: self.view.frame, style: .plain)
+        // 将代理、数据来源设置为自己
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
+        self.view.addSubview(tableView)
+		// 注册Cell
+        tableView.register(Cell.self, forCellReuseIdentifier: cellIdentify)
     }
 }
 </code></pre>
 
-<h3 id="步骤二">步骤二</h3>
+<ul>
+<li>设置分区section的数目，如果不设则默认为1</li>
+</ul>
 
-<p>打开文件AppDelegate.swift，修改函数application()</p>
-
-<pre><code class="language-swift">func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
-    // 判断APP第一次启动
-    if UserDefaults.isFirstLaunch() {
-        // 显示APP首页
-        print(&quot;这是第一次启动&quot;)
-        let firstUseViewController = firstUseViewController()
-        self.window!.rootViewController = firstUseViewController
-    }
-    return true
+<pre><code class="language-Swift">func numberOfSections(in tableView: UITableView) -&gt; Int {
+    return 1
 }
 </code></pre>
 
-<h2 id="判断app当前版本第一次启动">判断APP当前版本第一次启动</h2>
+<ul>
+<li>设置cell的数目和内容，<strong>这两个函数是必须的</strong></li>
+</ul>
 
-<h3 id="步骤一-1">步骤一</h3>
-
-<pre><code class="language-swift">import Foundation
-import UIKit
-extension UserDefaults {
-    // MARK: 当前版本第一次启动
-    static func isFirstLaunchOfNewVersion() -&gt; Bool {
-        //主程序版本号
-        let infoDictionary = Bundle.main.infoDictionary!
-        let majorVersion = infoDictionary[&quot;CFBundleShortVersionString&quot;] as! String
-
-        //上次启动的版本号
-        let hasBeenLaunchedOfNewVersion = &quot;hasBeenLaunchedOfNewVersion&quot;
-        let lastLaunchVersion = UserDefaults.standard.string(forKey:
-            hasBeenLaunchedOfNewVersion)
-
-        //版本号比较
-        let isFirstLaunchOfNewVersion = majorVersion != lastLaunchVersion
-        if isFirstLaunchOfNewVersion {
-            UserDefaults.standard.set(majorVersion, forKey:
-                hasBeenLaunchedOfNewVersion)
-            UserDefaults.standard.synchronize()
-        }
-        return isFirstLaunchOfNewVersion
+<pre><code class="language-Swift">func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -&gt; Int {
+    return 5
+}
+   
+func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -&gt; UITableViewCell {
+    var cell = tableView.dequeueReusableCell(withIdentifier: cellIdentify) as? Cell
+    if cell == nil{
+        let nibs:Array = Bundle.main.loadNibNamed(&quot;Cell&quot;, owner: self, options: nil)!
+        cell = (nibs.last as? Cell)!
     }
+    cell!.todoTitle.text = &quot;ToDoTitle&quot;
+    cell!.accessoryType = UITableViewCell.AccessoryType.disclosureIndicator
+    return cell!
 }
 </code></pre>
 
-<h3 id="步骤二-1">步骤二</h3>
+<ul>
+<li>设置cell的高度，这个是根据Cell类中控件大小定义的</li>
+</ul>
 
-<pre><code class="language-swift"> func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -&gt; Bool {
-    // 判断当前版本第一次启动
-    if UserDefaults.isFirstLaunchOfNewVersion() {
-        //显示新功能介绍页            
-        print(&quot;当前版本第一次启动&quot;)
-        let introductionViewController = IntroductionViewController()
-        self.window!.rootViewController = introductionViewController
+<pre><code class="language-Swift">func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -&gt; CGFloat {
+    return 60
+}
+</code></pre>
+
+<ul>
+<li>设置左滑显示“删除”，但是还不能真正实现删除哦</li>
+</ul>
+
+<pre><code class="language-Swift">func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    if editingStyle == UITableViewCell.EditingStyle.delete{
+        print(&quot;删除第\(indexPath.row+1)个选项&quot;)
     }
-    return true
 }
 </code></pre>
 
@@ -263,7 +264,7 @@ extension UserDefaults {
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://meow-stars.github.io/2020/20200111/>https://meow-stars.github.io/2020/20200111/</span>
+                    <a href=https://meow-stars.github.io/2020/20200131/>https://meow-stars.github.io/2020/20200131/</span>
             </p>
             
              
@@ -298,10 +299,10 @@ extension UserDefaults {
 
     <div class="post-nav">
         
-        <a href="https://meow-stars.github.io/2019/20191002/" class="prev" rel="prev" title="Sketch安装插件"><i class="iconfont icon-left"></i>&nbsp;Sketch安装插件</a>
+        <a href="https://meow-stars.github.io/2020/20200121/" class="prev" rel="prev" title="【iOS】Swift隐藏键盘"><i class="iconfont icon-left"></i>&nbsp;【iOS】Swift隐藏键盘</a>
          
         
-        <a href="https://meow-stars.github.io/2020/20200121/" class="next" rel="next" title="【iOS】Swift隐藏键盘">【iOS】Swift隐藏键盘&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://meow-stars.github.io/2020/20200202/" class="next" rel="next" title="【iOS】创建一个ToDoList APP(二)">【iOS】创建一个ToDoList APP(二)&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
