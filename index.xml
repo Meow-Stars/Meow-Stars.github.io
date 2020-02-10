@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>喵星澜 ~ MeowStars on 喵星澜 ~ MeowStars</title>
+    <title>云深隐星澜 ~ MeowStars on 云深隐星澜 ~ MeowStars</title>
     <link>https://meow-stars.github.io/</link>
-    <description>Recent content in 喵星澜 ~ MeowStars on 喵星澜 ~ MeowStars</description>
+    <description>Recent content in 云深隐星澜 ~ MeowStars on 云深隐星澜 ~ MeowStars</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 02 Feb 2020 16:12:54 +0800</lastBuildDate>
@@ -740,7 +740,8 @@ KillAll Finder
 &lt;ul&gt;
 &lt;li&gt;登录Github账号（默认已经拥有Github账号，没有就注册一个）&lt;/li&gt;
 &lt;li&gt;点击右上角头像，选择&lt;strong&gt;Your repositories&lt;/strong&gt;
-&lt;img src=&#34;https://pic.downk.cc/item/5e26d99a2fb38b8c3cbb0db5.png&#34; alt=&#34;创建仓库（一）&#34; /&gt;&lt;/li&gt;
+&lt;img src=&#34;https://pic.downk.cc/item/5e26d99a2fb38b8c3cbb0db5.png&#34; alt=&#34;[创建仓库（一）&#34; width=50% height=50%/&gt;
+&lt;!-- ![创建仓库（一）](https://pic.downk.cc/item/5e26d99a2fb38b8c3cbb0db5.png){:height=&#34;50%&#34; width=&#34;50%&#34;} --&gt;&lt;/li&gt;
 &lt;li&gt;选择绿色的按钮&lt;strong&gt;New&lt;/strong&gt;&lt;/li&gt;
 &lt;li&gt;在Repository name填入仓库名称，一定要是&lt;strong&gt;yourName.github.io&lt;/strong&gt;的形式，将yourName替换成你的Github用户名。&lt;strong&gt;其它什么都不要做，直接按Create repository&lt;/strong&gt;
 &lt;img src=&#34;https://pic.downk.cc/item/5e26d9b92fb38b8c3cbb123e.png&#34; alt=&#34;创建仓库（二）&#34; /&gt;&lt;/li&gt;
