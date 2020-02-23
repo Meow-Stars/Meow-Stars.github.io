@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>竞赛•练习 on 云深隐星澜 ~ MeowStars</title>
+    <link>https://meow-stars.github.io/categories/%E7%AB%9E%E8%B5%9B%E7%BB%83%E4%B9%A0/</link>
+    <description>Recent content in 竞赛•练习 on 云深隐星澜 ~ MeowStars</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 23 Feb 2020 21:45:06 +0800</lastBuildDate>
+    
+	<atom:link href="https://meow-stars.github.io/categories/%E7%AB%9E%E8%B5%9B%E7%BB%83%E4%B9%A0/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>计算2^N(N很大)</title>
+      <link>https://meow-stars.github.io/2020/20200223/</link>
+      <pubDate>Sun, 23 Feb 2020 21:45:06 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/2020/20200223/</guid>
+      <description>完整代码 #include &amp;lt;iostream&amp;gt; using namespace std; void calculatePower(int N){ // 定义一个足够大的数组，并将除array[0]外全置0 int array[N];	for(int i = 0; i &amp;lt; N; i++){ array[i] = 0; } array[0] = 1; // 计算N^N for(int p = 0; p &amp;lt; N; p++){ for(int j = 0; j &amp;lt; N; j++){ array[j] *= 2; } for(int m = 0; m &amp;lt; N; m++){ if(array[m] &amp;gt; 9){ array[m+1]++; array[m] = array[m]%10; } } } // 逆序找出数组中第一个不为0的元素 int q = 0; for(q = 0; q &amp;lt; N; q++){ if(array[N-q-1] !</description>
+    </item>
+    
+  </channel>
+</rss>

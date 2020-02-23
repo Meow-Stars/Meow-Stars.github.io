@@ -5,8 +5,72 @@
     <description>Recent content in 云深隐星澜 ~ MeowStars on 云深隐星澜 ~ MeowStars</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2020 16:12:54 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 23 Feb 2020 21:45:06 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>计算2^N(N很大)</title>
+      <link>https://meow-stars.github.io/2020/20200223/</link>
+      <pubDate>Sun, 23 Feb 2020 21:45:06 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/2020/20200223/</guid>
+      <description>
+
+&lt;h2 id=&#34;完整代码&#34;&gt;完整代码&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C++&#34;&gt;#include &amp;lt;iostream&amp;gt;
+using namespace std;
+
+void calculatePower(int N){
+	// 定义一个足够大的数组，并将除array[0]外全置0
+	int array[N];		
+	for(int i = 0; i &amp;lt; N; i++){
+		array[i] = 0;
+	}
+	array[0] = 1;
+	// 计算N^N
+	for(int p = 0; p &amp;lt; N; p++){
+		for(int j = 0; j &amp;lt; N; j++){
+			array[j] *= 2;
+		}
+		for(int m = 0; m &amp;lt; N; m++){
+			if(array[m] &amp;gt; 9){
+				array[m+1]++;
+				array[m] = array[m]%10;
+			}
+		}
+	}
+	// 逆序找出数组中第一个不为0的元素
+	int q = 0;
+	for(q = 0; q &amp;lt; N; q++){
+		if(array[N-q-1] != 0){
+			break;
+		}
+	}
+	// 逆序输出
+	for(; q &amp;lt; N; q++){
+		cout &amp;lt;&amp;lt; array[N-q-1];
+	}
+}
+
+int main()
+{
+	int N;
+	cout &amp;lt;&amp;lt; &amp;quot;请输入幂：&amp;quot; &amp;lt;&amp;lt; endl;
+	cin &amp;gt;&amp;gt; N;
+	cout &amp;lt;&amp;lt; &amp;quot;2^&amp;quot; &amp;lt;&amp;lt; N &amp;lt;&amp;lt; &amp;quot;结果为：&amp;quot; &amp;lt;&amp;lt; endl;
+	calculatePower(N);
+	cout &amp;lt;&amp;lt; endl;
+	return 0;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;测试&#34;&gt;测试&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://pic.downk.cc/item/5e5286dd03484b13247fa8de.png&#34; alt=&#34;2^1000&#34; /&gt;
+&lt;img src=&#34;https://pic.downk.cc/item/5e52864003484b13247f7d84.jpg&#34; alt=&#34;WolframAlpha&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>【iOS】创建一个ToDoList APP(二)</title>
