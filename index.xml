@@ -5,8 +5,113 @@
     <description>Recent content in 云深隐星澜 ~ MeowStars on 云深隐星澜 ~ MeowStars</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 23 Feb 2020 21:45:06 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 14:24:30 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【iOS】UICollectionView中使用Button</title>
+      <link>https://meow-stars.github.io/2020/20200305/</link>
+      <pubDate>Thu, 05 Mar 2020 14:24:30 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/2020/20200305/</guid>
+      <description>
+
+&lt;p&gt;我的每一个item上都有一个Button，我想点击按钮就能知道这是第几个item。&lt;/p&gt;
+
+&lt;h2 id=&#34;单独item的设置card-swift&#34;&gt;单独item的设置card.swift&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Swift&#34;&gt;import UIKit
+protocol GetProtocol {
+    func didGetProtocol(sender: Card)
+}
+class Card: UICollectionViewCell {
+    var titleLabel: UILabel!
+    var answerButton: UIButton!
+    // 遵循协议
+    var delegate: GetProtocol?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        // 获取item大小
+        let itemWidth: CGFloat = self.frame.size.width
+        let itemHeight: CGFloat = self.frame.size.height
+        // 添加按钮
+        answerButton = UIButton(type: .system)
+        answerButton.frame = CGRect(frame: CGRect(x: itemWidth*0.1, y: 5, width: itemWidth*0.8, height: 30))
+        answerButton.tag = i+1
+        answerButton.setTitle(&amp;quot;分值&amp;quot;, for: .normal)
+        answerButton.addTarget(self, action: #selector(selected(button: )), for: .touchDown)
+        self.addSubview(answerButton)
+    }
+    @objc func selected(button: UIButton){
+        // 点击按钮时调用代理，将当前item作为参数
+        delegate?.didGetScore(sender: self)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError(&amp;quot;init(coder:) has not been implemented&amp;quot;)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;uicollectionview的设置collectionview-swift&#34;&gt;UICollectionView的设置collectionview.swift&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Swift&#34;&gt;import UIKit
+class Dimension1Answer: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,GetProtocol {
+    var collectionView: UICollectionView!
+    var flowLayout: UICollectionViewFlowLayout!
+    let itemIdentify = &amp;quot;Item&amp;quot;
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addCollectionView()
+        registerItem()
+    }
+    // MRAK: 实现UICollectionView
+    func addCollectionView(){
+        // item的布局与尺寸
+        flowLayout = UICollectionViewFlowLayout()      
+        flowLayout.itemSize = CGSize(width: fullScreenSize.width, height: fullScreenSize.height*0.2)                 
+        flowLayout.scrollDirection = .vertical      
+        flowLayout.minimumInteritemSpacing = 40     // 行间距
+        // 创建UICollectionView
+        let collectionViewFrame: CGRect = CGRect(x: 0, y: fullScreenSize.height*0.3, width: fullScreenSize.width, height: fullScreenSize.height*0.65)
+        collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: flowLayout)
+        collectionView.backgroundColor = UIColor.orange
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        self.view.addSubview(collectionView)
+    }
+    // 注册item，使之重用
+    func registerItem(){
+        collectionView.register(Card.self, forCellWithReuseIdentifier: itemIdentify)
+    }
+    // item数量
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&amp;gt; Int {
+        return 5
+    }
+    // item内容
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&amp;gt; UICollectionViewCell {
+        let item: Card? = collectionView.dequeueReusableCell(withReuseIdentifier: itemIdentify, for: indexPath) as? Card
+        // MARK: delegate成功的关键！！！
+        item?.delegate = self
+        return item!
+    } 
+    // MARK: 实现GetProtocol
+    func didGetScore(sender: Card){
+        print(&amp;quot;我是协议&amp;quot;)
+        // 获取点击的是第几个item
+        let point: CGPoint = sender.center
+        let index: IndexPath = collectionView.indexPathForItem(at: point)!
+        print(&amp;quot;点击了第\(index.row+1)个item&amp;quot;)	// 序号是从0开始的
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;点击button显示结果&#34;&gt;点击Button显示结果&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&#34;https://pic.downk.cc/item/5e60f9b998271cb2b8bfc58c.png&#34; alt=&#34;这样子滴&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>计算2^N(N很大)</title>
@@ -69,6 +174,58 @@ int main()
 
 &lt;p&gt;&lt;img src=&#34;https://pic.downk.cc/item/5e5286dd03484b13247fa8de.png&#34; alt=&#34;2^1000&#34; /&gt;
 &lt;img src=&#34;https://pic.downk.cc/item/5e52864003484b13247f7d84.jpg&#34; alt=&#34;WolframAlpha&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>【iOS】字典中使用自定义结构体（可哈希）</title>
+      <link>https://meow-stars.github.io/2020/20200216/</link>
+      <pubDate>Sun, 16 Feb 2020 18:14:27 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/2020/20200216/</guid>
+      <description>
+
+&lt;p&gt;自定义了一个结构体Dimension&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Swift&#34;&gt;struct Dimension {
+    var dimName: String?
+    var dimWeight: Int?         
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;用作字典中的Key&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Swift&#34;&gt;var score: [Dimension?: Int?]
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;好了，报错&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Dictionary&#39; requires that &#39;Dimension&#39; conform to &#39;Hashable&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;Type &#39;Dimension&#39; does not conform to protocol &#39;Hashable&#39;&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;提取关键字“Hashable”，使用自定义类型作为合集的值类型或者字典的键类型，需要遵循Hashable协议。&lt;/p&gt;
+
+&lt;p&gt;Hashable协议遵循Equatable，需要实现 ==，即等价关系。等价关系必须满足以下三个条件，其中 a, b, c是任意值：&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;自反性：a == a&lt;br /&gt;&lt;/li&gt;
+&lt;li&gt;对称性：a == b 等价于 b == a&lt;/li&gt;
+&lt;li&gt;传递性：a == b &amp;amp;&amp;amp; b == c 等价于 a == c&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&#34;解决&#34;&gt;解决&lt;/h3&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-Swift&#34;&gt;extension Dimension: Hashable{          // 使该类型可哈希
+    static func == (dim1: Dimension, dim2: Dimension) -&amp;gt; Bool{
+        return dim1.dimName == dim2.dimName &amp;amp;&amp;amp; dim1.dimWeight == dim2.dimWeight
+    }
+    func hash(into hasher: inout Hasher){
+        hasher.combine(dimName)
+        hasher.combine(dimWeight)
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
 </description>
     </item>
     

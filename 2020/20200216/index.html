@@ -9,9 +9,9 @@
   
   
   
-  <link rel="prev" href="https://meow-stars.github.io/2020/20200216/" />
-  <link rel="next" href="https://meow-stars.github.io/2020/20200305/" />
-  <link rel="canonical" href="https://meow-stars.github.io/2020/20200223/" />
+  <link rel="prev" href="https://meow-stars.github.io/2020/20200202/" />
+  <link rel="next" href="https://meow-stars.github.io/2020/20200223/" />
+  <link rel="canonical" href="https://meow-stars.github.io/2020/20200216/" />
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -22,10 +22,10 @@
   <title>
        
        
-           计算2^N(N很大) | 云深隐星澜 ~ MeowStars
+           【iOS】字典中使用自定义结构体（可哈希） | 云深隐星澜 ~ MeowStars
        
   </title>
-  <meta name="title" content="计算2^N(N很大) | 云深隐星澜 ~ MeowStars">
+  <meta name="title" content="【iOS】字典中使用自定义结构体（可哈希） | 云深隐星澜 ~ MeowStars">
     
   
   <link rel="stylesheet" href="/font/iconfont.css">
@@ -44,9 +44,9 @@
          "@id": "https:\/\/meow-stars.github.io\/"
     },
     "articleSection" : "posts",
-    "name" : "计算2^N(N很大)",
-    "headline" : "计算2^N(N很大)",
-    "description" : "完整代码 #include \x26lt;iostream\x26gt; using namespace std; void calculatePower(int N){ \/\/ 定义一个足够大的数组，并将除array[0]外全置0 int array[N];\tfor(int i = 0; i \x26lt; N; i\x2b\x2b){ array[i] = 0; } array[0] = 1; \/\/ 计算N^N for(int p = 0; p \x26lt; N; p\x2b\x2b){ for(int j = 0; j \x26lt; N; j\x2b\x2b){ array[j] *= 2; } for(int m = 0; m \x26lt; N; m\x2b\x2b){ if(array[m] \x26gt; 9){ array[m\x2b1]\x2b\x2b; array[m] = array[m]%10; } } } \/\/ 逆序找出数组中第一个不为0的元素 int q = 0; for(q = 0; q \x26lt; N; q\x2b\x2b){ if(array[N-q-1] !",
+    "name" : "【iOS】字典中使用自定义结构体（可哈希）",
+    "headline" : "【iOS】字典中使用自定义结构体（可哈希）",
+    "description" : "自定义了一个结构体Dimension\nstruct Dimension { var dimName: String? var dimWeight: Int? }  用作字典中的Key\nvar score: [Dimension?: Int?]  好了，报错\nDictionary\x27 requires that \x27Dimension\x27 conform to \x27Hashable\nType \x27Dimension\x27 does not conform to protocol \x27Hashable\x27\n提取关键字“Hashable”，使用自定义类型作为合集的值类型或者字典的键类型，需要遵循Hashable协议。\nHashable协议遵循Equatable，需要实现 ==，即等价关系。等价关系必须满足以下三个条件，其中 a, b, c是任意值：\n 自反性：a == a\n 对称性：a == b 等价于 b == a 传递性：a == b \x26amp;\x26amp; b == c 等价于 a == c  解决 extension Dimension: Hashable{ \/\/ 使该类型可哈希 static func == (dim1: Dimension, dim2: Dimension) -\x26gt; Bool{ return dim1.",
     "inLanguage" : "en-us",
     "author" : "云深隐星澜",
     "creator" : "云深隐星澜",
@@ -54,11 +54,11 @@
     "accountablePerson" : "云深隐星澜",
     "copyrightHolder" : "云深隐星澜",
     "copyrightYear" : "2020",
-    "datePublished": "2020-02-23 21:45:06 \x2b0800 CST",
-    "dateModified" : "2020-02-23 21:45:06 \x2b0800 CST",
-    "url" : "https:\/\/meow-stars.github.io\/2020\/20200223\/",
-    "wordCount" : "129",
-    "keywords" : [ "竞赛", "云深隐星澜 ~ MeowStars"]
+    "datePublished": "2020-02-16 18:14:27 \x2b0800 CST",
+    "dateModified" : "2020-02-16 18:14:27 \x2b0800 CST",
+    "url" : "https:\/\/meow-stars.github.io\/2020\/20200216\/",
+    "wordCount" : "92",
+    "keywords" : [ "iOS","XCode","Swift", "云深隐星澜 ~ MeowStars"]
 }
 </script>
 
@@ -116,15 +116,16 @@
       		
 <article class="post-warp" itemscope itemtype="http://schema.org/Article">
     <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">计算2^N(N很大)</h1>
+        <h1 class="post-title" itemprop="name headline">【iOS】字典中使用自定义结构体（可哈希）</h1>
         <div class="post-meta">
                 Written by <a itemprop="name" href="https://meow-stars.github.io/" rel="author">云深隐星澜</a> with ♥ 
                 <span class="post-time">
-                on <time datetime=2020-02-23 itemprop="datePublished">February 23, 2020</time>
+                on <time datetime=2020-02-16 itemprop="datePublished">February 16, 2020</time>
                 </span>
                 in
                 <i class="iconfont icon-folder"></i>
                 <span class="post-category">
+                        <a href="https://meow-stars.github.io/categories/iosswift/"> iOS•Swift </a>
                         
                 </span>
         </div>
@@ -132,8 +133,6 @@
     <div class="post-content">
         
 
-        
-            
         
 
         
@@ -149,59 +148,47 @@
 
           
 
-<h2 id="完整代码">完整代码</h2>
+<p>自定义了一个结构体Dimension</p>
 
-<pre><code class="language-C++">#include &lt;iostream&gt;
-using namespace std;
-
-void calculatePower(int N){
-	// 定义一个足够大的数组，并将除array[0]外全置0
-	int array[N];		
-	for(int i = 0; i &lt; N; i++){
-		array[i] = 0;
-	}
-	array[0] = 1;
-	// 计算N^N
-	for(int p = 0; p &lt; N; p++){
-		for(int j = 0; j &lt; N; j++){
-			array[j] *= 2;
-		}
-		for(int m = 0; m &lt; N; m++){
-			if(array[m] &gt; 9){
-				array[m+1]++;
-				array[m] = array[m]%10;
-			}
-		}
-	}
-	// 逆序找出数组中第一个不为0的元素
-	int q = 0;
-	for(q = 0; q &lt; N; q++){
-		if(array[N-q-1] != 0){
-			break;
-		}
-	}
-	// 逆序输出
-	for(; q &lt; N; q++){
-		cout &lt;&lt; array[N-q-1];
-	}
-}
-
-int main()
-{
-	int N;
-	cout &lt;&lt; &quot;请输入幂：&quot; &lt;&lt; endl;
-	cin &gt;&gt; N;
-	cout &lt;&lt; &quot;2^&quot; &lt;&lt; N &lt;&lt; &quot;结果为：&quot; &lt;&lt; endl;
-	calculatePower(N);
-	cout &lt;&lt; endl;
-	return 0;
+<pre><code class="language-Swift">struct Dimension {
+    var dimName: String?
+    var dimWeight: Int?         
 }
 </code></pre>
 
-<h2 id="测试">测试</h2>
+<p>用作字典中的Key</p>
 
-<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://pic.downk.cc/item/5e5286dd03484b13247fa8de.png" alt="2^1000" class="lazyload"><figcaption class="image-caption">2^1000</figcaption></figure>
-<figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://pic.downk.cc/item/5e52864003484b13247f7d84.jpg" alt="WolframAlpha" class="lazyload"><figcaption class="image-caption">WolframAlpha</figcaption></figure></p>
+<pre><code class="language-Swift">var score: [Dimension?: Int?]
+</code></pre>
+
+<p>好了，报错</p>
+
+<p><code>Dictionary' requires that 'Dimension' conform to 'Hashable</code></p>
+
+<p><code>Type 'Dimension' does not conform to protocol 'Hashable'</code></p>
+
+<p>提取关键字“Hashable”，使用自定义类型作为合集的值类型或者字典的键类型，需要遵循Hashable协议。</p>
+
+<p>Hashable协议遵循Equatable，需要实现 ==，即等价关系。等价关系必须满足以下三个条件，其中 a, b, c是任意值：</p>
+
+<ul>
+<li>自反性：a == a<br /></li>
+<li>对称性：a == b 等价于 b == a</li>
+<li>传递性：a == b &amp;&amp; b == c 等价于 a == c</li>
+</ul>
+
+<h3 id="解决">解决</h3>
+
+<pre><code class="language-Swift">extension Dimension: Hashable{          // 使该类型可哈希
+    static func == (dim1: Dimension, dim2: Dimension) -&gt; Bool{
+        return dim1.dimName == dim2.dimName &amp;&amp; dim1.dimWeight == dim2.dimWeight
+    }
+    func hash(into hasher: inout Hasher){
+        hasher.combine(dimName)
+        hasher.combine(dimWeight)
+    }
+}
+</code></pre>
 
     </div>
 
@@ -216,7 +203,7 @@ int main()
              
             <p class="copyright-item">
                     <span>Link:</span>
-                    <a href=https://meow-stars.github.io/2020/20200223/>https://meow-stars.github.io/2020/20200223/</span>
+                    <a href=https://meow-stars.github.io/2020/20200216/>https://meow-stars.github.io/2020/20200216/</span>
             </p>
             
              
@@ -232,8 +219,14 @@ int main()
             <section>
             <i class="iconfont icon-tag"></i>Tag(s): 
             
-            <span class="tag"><a href="https://meow-stars.github.io/tags/%E7%AB%9E%E8%B5%9B/">
-                    #竞赛</a></span>
+            <span class="tag"><a href="https://meow-stars.github.io/tags/ios/">
+                    #iOS</a></span>
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/xcode/">
+                    #XCode</a></span>
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/swift/">
+                    #Swift</a></span>
             
             </section>
         
@@ -245,10 +238,10 @@ int main()
 
     <div class="post-nav">
         
-        <a href="https://meow-stars.github.io/2020/20200216/" class="prev" rel="prev" title="【iOS】字典中使用自定义结构体（可哈希）"><i class="iconfont icon-left"></i>&nbsp;【iOS】字典中使用自定义结构体（可哈希）</a>
+        <a href="https://meow-stars.github.io/2020/20200202/" class="prev" rel="prev" title="【iOS】创建一个ToDoList APP(二)"><i class="iconfont icon-left"></i>&nbsp;【iOS】创建一个ToDoList APP(二)</a>
          
         
-        <a href="https://meow-stars.github.io/2020/20200305/" class="next" rel="next" title="【iOS】UICollectionView中使用Button">【iOS】UICollectionView中使用Button&nbsp;<i class="iconfont icon-right"></i></a>
+        <a href="https://meow-stars.github.io/2020/20200223/" class="next" rel="next" title="计算2^N(N很大)">计算2^N(N很大)&nbsp;<i class="iconfont icon-right"></i></a>
         
     </div>
 
@@ -290,9 +283,8 @@ int main()
 
 
     
-     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
-      
-     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
     
   
 

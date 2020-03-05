@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="云深隐星澜">
+  
+  
+  
+  <link rel="prev" href="https://meow-stars.github.io/2020/20200223/" />
+  
+  <link rel="canonical" href="https://meow-stars.github.io/2020/20200305/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           【iOS】UICollectionView中使用Button | 云深隐星澜 ~ MeowStars
+       
+  </title>
+  <meta name="title" content="【iOS】UICollectionView中使用Button | 云深隐星澜 ~ MeowStars">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/meow-stars.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "【iOS】UICollectionView中使用Button",
+    "headline" : "【iOS】UICollectionView中使用Button",
+    "description" : "我的每一个item上都有一个Button，我想点击按钮就能知道这是第几个item。\n单独item的设置card.swift import UIKit protocol GetProtocol { func didGetProtocol(sender: Card) } class Card: UICollectionViewCell { var titleLabel: UILabel! var answerButton: UIButton! \/\/ 遵循协议 var delegate: GetProtocol? override init(frame: CGRect) { super.init(frame: frame) \/\/ 获取item大小 let itemWidth: CGFloat = self.frame.size.width let itemHeight: CGFloat = self.frame.size.height \/\/ 添加按钮 answerButton = UIButton(type: .system) answerButton.frame = CGRect(frame: CGRect(x: itemWidth*0.1, y: 5, width: itemWidth*0.8, height: 30)) answerButton.tag = i\x2b1 answerButton.setTitle(\x26quot;分值\x26quot;, for: .normal) answerButton.addTarget(self, action: #selector(selected(button: )), for: .",
+    "inLanguage" : "en-us",
+    "author" : "云深隐星澜",
+    "creator" : "云深隐星澜",
+    "publisher": "云深隐星澜",
+    "accountablePerson" : "云深隐星澜",
+    "copyrightHolder" : "云深隐星澜",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-03-05 14:24:30 \x2b0800 CST",
+    "dateModified" : "2020-03-05 14:24:30 \x2b0800 CST",
+    "url" : "https:\/\/meow-stars.github.io\/2020\/20200305\/",
+    "wordCount" : "256",
+    "keywords" : [ "iOS","XCode","Swift", "云深隐星澜 ~ MeowStars"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">云深隐星澜 ~ MeowStars</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">云深隐星澜 ~ MeowStars</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">【iOS】UICollectionView中使用Button</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://meow-stars.github.io/" rel="author">云深隐星澜</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-03-05 itemprop="datePublished">March 5, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://meow-stars.github.io/categories/iosswift/"> iOS•Swift </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+            
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<p>我的每一个item上都有一个Button，我想点击按钮就能知道这是第几个item。</p>
+
+<h2 id="单独item的设置card-swift">单独item的设置card.swift</h2>
+
+<pre><code class="language-Swift">import UIKit
+protocol GetProtocol {
+    func didGetProtocol(sender: Card)
+}
+class Card: UICollectionViewCell {
+    var titleLabel: UILabel!
+    var answerButton: UIButton!
+    // 遵循协议
+    var delegate: GetProtocol?
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        // 获取item大小
+        let itemWidth: CGFloat = self.frame.size.width
+        let itemHeight: CGFloat = self.frame.size.height
+        // 添加按钮
+        answerButton = UIButton(type: .system)
+        answerButton.frame = CGRect(frame: CGRect(x: itemWidth*0.1, y: 5, width: itemWidth*0.8, height: 30))
+        answerButton.tag = i+1
+        answerButton.setTitle(&quot;分值&quot;, for: .normal)
+        answerButton.addTarget(self, action: #selector(selected(button: )), for: .touchDown)
+        self.addSubview(answerButton)
+    }
+    @objc func selected(button: UIButton){
+        // 点击按钮时调用代理，将当前item作为参数
+        delegate?.didGetScore(sender: self)
+    }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError(&quot;init(coder:) has not been implemented&quot;)
+    }
+}
+</code></pre>
+
+<h2 id="uicollectionview的设置collectionview-swift">UICollectionView的设置collectionview.swift</h2>
+
+<pre><code class="language-Swift">import UIKit
+class Dimension1Answer: UIViewController,UICollectionViewDelegate,UICollectionViewDataSource,GetProtocol {
+    var collectionView: UICollectionView!
+    var flowLayout: UICollectionViewFlowLayout!
+    let itemIdentify = &quot;Item&quot;
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        addCollectionView()
+        registerItem()
+    }
+    // MRAK: 实现UICollectionView
+    func addCollectionView(){
+        // item的布局与尺寸
+        flowLayout = UICollectionViewFlowLayout()      
+        flowLayout.itemSize = CGSize(width: fullScreenSize.width, height: fullScreenSize.height*0.2)                 
+        flowLayout.scrollDirection = .vertical      
+        flowLayout.minimumInteritemSpacing = 40     // 行间距
+        // 创建UICollectionView
+        let collectionViewFrame: CGRect = CGRect(x: 0, y: fullScreenSize.height*0.3, width: fullScreenSize.width, height: fullScreenSize.height*0.65)
+        collectionView = UICollectionView(frame: collectionViewFrame, collectionViewLayout: flowLayout)
+        collectionView.backgroundColor = UIColor.orange
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        self.view.addSubview(collectionView)
+    }
+    // 注册item，使之重用
+    func registerItem(){
+        collectionView.register(Card.self, forCellWithReuseIdentifier: itemIdentify)
+    }
+    // item数量
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -&gt; Int {
+        return 5
+    }
+    // item内容
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -&gt; UICollectionViewCell {
+        let item: Card? = collectionView.dequeueReusableCell(withReuseIdentifier: itemIdentify, for: indexPath) as? Card
+        // MARK: delegate成功的关键！！！
+        item?.delegate = self
+        return item!
+    } 
+    // MARK: 实现GetProtocol
+    func didGetScore(sender: Card){
+        print(&quot;我是协议&quot;)
+        // 获取点击的是第几个item
+        let point: CGPoint = sender.center
+        let index: IndexPath = collectionView.indexPathForItem(at: point)!
+        print(&quot;点击了第\(index.row+1)个item&quot;)	// 序号是从0开始的
+    }
+}
+</code></pre>
+
+<h2 id="点击button显示结果">点击Button显示结果</h2>
+
+<p><figure><img src="/images/ring.svg" data-sizes="auto" data-src="https://pic.downk.cc/item/5e60f9b998271cb2b8bfc58c.png" alt="这样子滴" class="lazyload"><figcaption class="image-caption">这样子滴</figcaption></figure></p>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>云深隐星澜 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://meow-stars.github.io/2020/20200305/>https://meow-stars.github.io/2020/20200305/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/ios/">
+                    #iOS</a></span>
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/xcode/">
+                    #XCode</a></span>
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/swift/">
+                    #Swift</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://meow-stars.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://meow-stars.github.io/2020/20200223/" class="prev" rel="prev" title="计算2^N(N很大)"><i class="iconfont icon-left"></i>&nbsp;计算2^N(N很大)</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://meow-stars.github.io/">云深隐星澜</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+     <link href="//lib.baomitu.com/lightgallery/1.6.11/css/lightgallery.min.css" rel="stylesheet">  
+      
+     <script src="/js/vendor_gallery.min.js" async="" ></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>

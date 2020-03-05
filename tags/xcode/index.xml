@@ -6,10 +6,37 @@
     <description>Recent content in XCode on 云深隐星澜 ~ MeowStars</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 02 Feb 2020 16:12:54 +0800</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2020 14:24:30 +0800</lastBuildDate>
     
 	<atom:link href="https://meow-stars.github.io/tags/xcode/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>【iOS】UICollectionView中使用Button</title>
+      <link>https://meow-stars.github.io/2020/20200305/</link>
+      <pubDate>Thu, 05 Mar 2020 14:24:30 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/2020/20200305/</guid>
+      <description>我的每一个item上都有一个Button，我想点击按钮就能知道这是第几个item。
+单独item的设置card.swift import UIKit protocol GetProtocol { func didGetProtocol(sender: Card) } class Card: UICollectionViewCell { var titleLabel: UILabel! var answerButton: UIButton! // 遵循协议 var delegate: GetProtocol? override init(frame: CGRect) { super.init(frame: frame) // 获取item大小 let itemWidth: CGFloat = self.frame.size.width let itemHeight: CGFloat = self.frame.size.height // 添加按钮 answerButton = UIButton(type: .system) answerButton.frame = CGRect(frame: CGRect(x: itemWidth*0.1, y: 5, width: itemWidth*0.8, height: 30)) answerButton.tag = i+1 answerButton.setTitle(&amp;quot;分值&amp;quot;, for: .normal) answerButton.addTarget(self, action: #selector(selected(button: )), for: .</description>
+    </item>
+    
+    <item>
+      <title>【iOS】字典中使用自定义结构体（可哈希）</title>
+      <link>https://meow-stars.github.io/2020/20200216/</link>
+      <pubDate>Sun, 16 Feb 2020 18:14:27 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/2020/20200216/</guid>
+      <description>自定义了一个结构体Dimension
+struct Dimension { var dimName: String? var dimWeight: Int? }  用作字典中的Key
+var score: [Dimension?: Int?]  好了，报错
+Dictionary&#39; requires that &#39;Dimension&#39; conform to &#39;Hashable
+Type &#39;Dimension&#39; does not conform to protocol &#39;Hashable&#39;
+提取关键字“Hashable”，使用自定义类型作为合集的值类型或者字典的键类型，需要遵循Hashable协议。
+Hashable协议遵循Equatable，需要实现 ==，即等价关系。等价关系必须满足以下三个条件，其中 a, b, c是任意值：
+ 自反性：a == a
+ 对称性：a == b 等价于 b == a 传递性：a == b &amp;amp;&amp;amp; b == c 等价于 a == c  解决 extension Dimension: Hashable{ // 使该类型可哈希 static func == (dim1: Dimension, dim2: Dimension) -&amp;gt; Bool{ return dim1.</description>
+    </item>
     
     <item>
       <title>【iOS】创建一个ToDoList APP(二)</title>
