@@ -46,7 +46,7 @@
     "articleSection" : "posts",
     "name" : "Hugo搭建个人博客（三）—— Github绑定顶级域名",
     "headline" : "Hugo搭建个人博客（三）—— Github绑定顶级域名",
-    "description" : "域名注册 这个就不细讲了，国内阿里云、腾讯云都挺好的，随便挑吧，看哪个优惠力度大。\n我选的阿里云，因为.info域名阿里云第一年更便宜。\n域名解析 域名注册好后，要将域名解析到博客上才能使用。\n 进入阿里云域名服务-域名列表。这里会显示在阿里云注册的域名 选择注册好的域名，最后操作一列有解析选项，点击  选择添加记录  在终端输入ping yourName@github.io，可以查看到IP为185.199.110.153。（似乎现在所有Github Page的IP都是这个，不过还是自己ping一遍吧） 添加两个类型为A的记录，一个主机记录为www，另一个为@。记录值都是IP地址   修改Github仓库的CNAME文件  进入yourName.github.io仓库，找到文件CNAME 如果没有，就自己创建一个。选择右上角Create new file  文件名为CNAME，没有文件类型后缀 输入内容为注册好的域名  提交保存后就大功告成！等待几分钟使域名生效，就可以通过顶级域名访问博客了  域名备案 服务器在国内的顶级域名都需要备案，我没用服务器，就先挖个坑，等我哪天开始折腾云服务器了就来填坑。",
+    "description" : "域名注册 这个就不细讲了，国内阿里云、腾讯云都挺好的，随便挑吧，看哪个优惠力度大。\n我选的阿里云，因为.info域名阿里云第一年更便宜。\n域名解析 域名注册好后，要将域名解析到博客上才能使用。\n 进入阿里云域名服务-域名列表。这里会显示在阿里云注册的域名 选择注册好的域名，最后操作一列有解析选项，点击  选择添加记录  在终端输入ping yourName@github.io，可以查看到IP为185.199.110.153  注意注意：一定要自己ping一遍啊！！！  添加两个类型为A的记录，一个主机记录为www，另一个为@。记录值都是IP地址   修改Github仓库的CNAME文件  进入yourName.github.io仓库，找到文件CNAME 如果没有，就自己创建一个。选择右上角Create new file  文件名为CNAME，没有文件类型后缀 输入内容为注册好的域名  提交保存后就大功告成！等待几分钟使域名生效，就可以通过顶级域名访问博客了  域名备案 服务器在国内的顶级域名都需要备案，我没用服务器，就先挖个坑，等我哪天开始折腾云服务器了就来填坑。",
     "inLanguage" : "en-us",
     "author" : "云深隐星澜",
     "creator" : "云深隐星澜",
@@ -165,7 +165,11 @@
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww3.sinaimg.cn/large/006tNc79gy1g4h1bwmucxj31ne08kjt4.jpg" alt="域名解析（一）" class="lazyload"><figcaption class="image-caption">域名解析（一）</figcaption></figure></li>
 <li>选择添加记录
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww3.sinaimg.cn/large/006tNc79gy1g4h2oyxjuyj31le0nhtca.jpg" alt="域名解析（二）" class="lazyload"><figcaption class="image-caption">域名解析（二）</figcaption></figure></li>
-<li>在终端输入<code>ping yourName@github.io</code>，可以查看到IP为<code>185.199.110.153</code>。（似乎现在所有Github Page的IP都是这个，不过还是自己ping一遍吧）</li>
+<li>在终端输入<code>ping yourName@github.io</code>，可以查看到IP为<code>185.199.110.153</code>
+
+<ul>
+<li>注意注意：一定要自己ping一遍啊！！！</li>
+</ul></li>
 <li>添加两个类型为A的记录，一个主机记录为www，另一个为@。记录值都是IP地址
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww2.sinaimg.cn/large/006tNc79gy1g4h1i1euxhj310q0qk0ut.jpg" alt="域名解析（三）" class="lazyload"><figcaption class="image-caption">域名解析（三）</figcaption></figure>
 <figure><img src="/images/ring.svg" data-sizes="auto" data-src="http://ww3.sinaimg.cn/large/006tNc79gy1g4h1iosf0fj31mo0a80us.jpg" alt="域名解析（四）" class="lazyload"><figcaption class="image-caption">域名解析（四）</figcaption></figure></li>

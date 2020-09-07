@@ -924,7 +924,11 @@ KillAll Finder
 &lt;img src=&#34;http://ww3.sinaimg.cn/large/006tNc79gy1g4h1bwmucxj31ne08kjt4.jpg&#34; alt=&#34;域名解析（一）&#34; /&gt;&lt;/li&gt;
 &lt;li&gt;选择添加记录
 &lt;img src=&#34;http://ww3.sinaimg.cn/large/006tNc79gy1g4h2oyxjuyj31le0nhtca.jpg&#34; alt=&#34;域名解析（二）&#34; /&gt;&lt;/li&gt;
-&lt;li&gt;在终端输入&lt;code&gt;ping yourName@github.io&lt;/code&gt;，可以查看到IP为&lt;code&gt;185.199.110.153&lt;/code&gt;。（似乎现在所有Github Page的IP都是这个，不过还是自己ping一遍吧）&lt;/li&gt;
+&lt;li&gt;在终端输入&lt;code&gt;ping yourName@github.io&lt;/code&gt;，可以查看到IP为&lt;code&gt;185.199.110.153&lt;/code&gt;
+
+&lt;ul&gt;
+&lt;li&gt;注意注意：一定要自己ping一遍啊！！！&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
 &lt;li&gt;添加两个类型为A的记录，一个主机记录为www，另一个为@。记录值都是IP地址
 &lt;img src=&#34;http://ww2.sinaimg.cn/large/006tNc79gy1g4h1i1euxhj310q0qk0ut.jpg&#34; alt=&#34;域名解析（三）&#34; /&gt;
 &lt;img src=&#34;http://ww3.sinaimg.cn/large/006tNc79gy1g4h1iosf0fj31mo0a80us.jpg&#34; alt=&#34;域名解析（四）&#34; /&gt;&lt;/li&gt;
