@@ -5,8 +5,202 @@
     <description>Recent content in 云深隐星澜 ~ MeowStars on 云深隐星澜 ~ MeowStars</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Thu, 05 Mar 2020 14:24:30 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 07 Sep 2020 13:14:38 +0800</lastBuildDate>
     <atom:link href="/" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>【线性表】带头结点的单链表——基础操作</title>
+      <link>https://meow-stars.github.io/2020/20200907/</link>
+      <pubDate>Mon, 07 Sep 2020 13:14:38 +0800</pubDate>
+      
+      <guid>https://meow-stars.github.io/2020/20200907/</guid>
+      <description>
+
+&lt;h2 id=&#34;定义结点类型&#34;&gt;定义结点类型&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;typedef int Elemtype;
+// 因为该结构体中包含了Node类型变量（指针域），这是结构体的自引用，只能通过自引用指针*LinkList实现
+typedef struct Node{
+    Elemtype data;		// 数据域
+    struct Node *next;	// 指针域
+}Node,*LinkList;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;创建单链表&#34;&gt;创建单链表&lt;/h2&gt;
+
+&lt;h3 id=&#34;头插法&#34;&gt;头插法&lt;/h3&gt;
+
+&lt;p&gt;头插法是将结点a~n~、a~n-1~、a~n-2~、……、a~1~逐个插入到头结点后面，因此输入时要逆序输入&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;LinkList CreateLinkListHead(int n){
+    // 先建立一个带头结点的空单链表L
+    Node *L;
+    L = (Node *)malloc(sizeof(Node));
+    L -&amp;gt; next = NULL;
+    // 逆序输入n个元素的值
+    printf(&amp;quot;输入n个元素的值：&amp;quot;);
+    for(int i = n; i &amp;gt; 0; i--){
+        Node *p;
+        p = (Node *)malloc(sizeof(Node));	      // 申请新的结点空间
+        scanf(&amp;quot;%d&amp;quot;,&amp;amp;p -&amp;gt; data);					// 输入元素值
+        p -&amp;gt; next = L -&amp;gt; next;				 // 将新结点插入到表头
+        L -&amp;gt; next = p;
+    }
+    return L;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3 id=&#34;尾插法&#34;&gt;尾插法&lt;/h3&gt;
+
+&lt;p&gt;尾插法是将结点插入到最后一个结点后面，即新插入的结点变为链表最后一个结点&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;LinkList CreateLinkListTail(int n){
+    // 先建立一个带头结点的空单链表L，pL是指向头结点的指针
+    Node *L;
+    L = (Node *)malloc(sizeof(Node));
+    L -&amp;gt; next = NULL;
+    Node *pL = L;
+    // 顺序输入n个元素的值
+    printf(&amp;quot;输入n个元素的值：&amp;quot;);
+    for(int i = 0; i &amp;lt; n; i++){
+        Node *p;
+        p = (Node *)malloc(sizeof(Node));	      // 申请新的结点空间
+        scanf(&amp;quot;%d&amp;quot;,&amp;amp;p -&amp;gt; data);					// 输入元素值
+        p -&amp;gt; next = NULL;
+        pL -&amp;gt; next = p;                            // 将新结点插入到表头
+        pL = pL -&amp;gt; next;
+    }
+    return L;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;插入&#34;&gt;插入&lt;/h2&gt;
+
+&lt;p&gt;在链表的第i个位置插入元素e，使元素e称为新链表的第i个元素&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;int ListInsert(LinkList L, int i, Elemtype e){
+    Node *p;
+    p = L;			// p指向第i个位置结点的前驱结点，初始结果 = 头结点
+    int index ;	// 计数器
+    for(index = 1; index &amp;lt; i; index++){		// 寻找第i-1个结点，即第i个结点的前驱结点
+        p = p -&amp;gt; next;
+    }
+    Node *s;
+    s = (Node *)malloc(sizeof(Node));
+    s -&amp;gt; data = e;							    // 插入值为e的结点x
+    s -&amp;gt; next = p -&amp;gt; next;
+    p -&amp;gt; next = s;
+    return 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;删除&#34;&gt;删除&lt;/h2&gt;
+
+&lt;p&gt;删除链表中值为e的结点，这段代码如果有重复元素，只能删除第一个出现的&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;// 单链表的删除，删除链表中值为e的元素
+int ListDelete(LinkList L, Elemtype e){
+    Node *p,*x;				// p指向待删除结点的前驱结点，x指向待删除结点
+    p = L ;
+    x = L -&amp;gt; next;
+    while(x -&amp;gt; data != e){
+        p = x;
+        x = x -&amp;gt; next;
+    }
+    p -&amp;gt; next = x -&amp;gt; next;	// 删除并释放结点x
+    free(x);
+    return 1;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;查找&#34;&gt;查找&lt;/h2&gt;
+
+&lt;p&gt;在单链表中查找元素e，如果存在元素e，返回e第一次出现的位置，否则返回-1&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;// 在链表中查找结点e
+int ListSearch(LinkList L, Elemtype e){
+    Node *p = L;                // p最先指向头结点
+    int i = 1;                    // i是结点e的位置
+    while(p -&amp;gt; next){
+        p = p -&amp;gt; next;          // 为什么要先执行p = p -&amp;gt; next？因为要让p指向第一个结点
+        if(p -&amp;gt; data == e){
+            return i;
+        }
+        i++;
+    }
+    return -1;                  // 不存在结点e则返回-1
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;获取单链表长度&#34;&gt;获取单链表长度&lt;/h2&gt;
+
+&lt;p&gt;这个长度是单链表有意义的长度，不包含头结点&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;int ListLength(LinkList L){
+    Node *p = L;
+    int index = 0;
+    while(p -&amp;gt; next){
+        p = p -&amp;gt; next;
+        index++;
+    }
+    return index;
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;打印整个单链表&#34;&gt;打印整个单链表&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;void PrintList(LinkList list){
+    Node *p = list;
+    if( p -&amp;gt; next == NULL){             // p指向list的头结点，所以判断空表是p -&amp;gt; next == NULL
+        printf(&amp;quot;这素一个空链表&amp;quot;);
+    }
+    while(p -&amp;gt; next){
+        p = p -&amp;gt; next;
+        printf(&amp;quot;%d  &amp;quot;,p -&amp;gt; data);
+    }
+    printf(&amp;quot;\n&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2 id=&#34;main-函数&#34;&gt;main( )函数&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code class=&#34;language-C&#34;&gt;int main(){
+	LinkList list;
+	// 创建单链表A
+	printf(&amp;quot;输入链表长度n：&amp;quot;);
+	int n;
+	scanf(&amp;quot;%d&amp;quot;,&amp;amp;n);
+	list = CreateLinkListTail(n);
+	PrintList(list);
+	printf(&amp;quot;单链表长度%d&amp;quot;,ListLength(list));
+
+	// 插入结点
+	printf(&amp;quot;输入插入位置i：&amp;quot;);
+	int i;
+	scanf(&amp;quot;%d&amp;quot;,&amp;amp;i);
+	printf(&amp;quot;输入插入元素e的值：&amp;quot;);
+	Elemtype e1;
+	scanf(&amp;quot;%d&amp;quot;,&amp;amp;e1);
+	ListInsert(list,i,e1);
+	PrintList(list);
+
+	// 删除结点
+	printf(&amp;quot;输入删除元素e的值：&amp;quot;);
+	Elemtype e2;
+	scanf(&amp;quot;%d&amp;quot;,&amp;amp;e2);
+	ListDelete(list,e2);
+    PrintList(list);
+
+    // 查找结点
+    printf(&amp;quot;输入查找元素e的值：&amp;quot;);
+    Elemtype e3;
+    scanf(&amp;quot;%d&amp;quot;,&amp;amp;e3);
+    int index = ListSearch(list,e3);
+    printf(&amp;quot;%d&amp;quot;);
+}
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>【iOS】UICollectionView中使用Button</title>

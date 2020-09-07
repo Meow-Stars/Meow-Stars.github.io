@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noodp"/>
+  <meta name="author" content="云深隐星澜">
+  
+  
+  
+  <link rel="prev" href="https://meow-stars.github.io/2020/20200305/" />
+  
+  <link rel="canonical" href="https://meow-stars.github.io/2020/20200907/" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <title>
+       
+       
+           【线性表】带头结点的单链表——基础操作 | 云深隐星澜 ~ MeowStars
+       
+  </title>
+  <meta name="title" content="【线性表】带头结点的单链表——基础操作 | 云深隐星澜 ~ MeowStars">
+    
+  
+  <link rel="stylesheet" href="/font/iconfont.css">
+  <link rel="stylesheet" href="/css/main.min.css">
+
+
+  
+  
+ 
+
+<script type="application/ld+json">
+ "@context" : "http://schema.org",
+    "@type" : "BlogPosting",
+    "mainEntityOfPage": {
+         "@type": "WebPage",
+         "@id": "https:\/\/meow-stars.github.io\/"
+    },
+    "articleSection" : "posts",
+    "name" : "【线性表】带头结点的单链表——基础操作",
+    "headline" : "【线性表】带头结点的单链表——基础操作",
+    "description" : "定义结点类型 typedef int Elemtype; \/\/ 因为该结构体中包含了Node类型变量（指针域），这是结构体的自引用，只能通过自引用指针*LinkList实现 typedef struct Node{ Elemtype data;\t\/\/ 数据域 struct Node *next;\t\/\/ 指针域 }Node,*LinkList;  创建单链表 头插法 头插法是将结点a~n~、a~n-1~、a~n-2~、……、a~1~逐个插入到头结点后面，因此输入时要逆序输入\nLinkList CreateLinkListHead(int n){ \/\/ 先建立一个带头结点的空单链表L Node *L; L = (Node *)malloc(sizeof(Node)); L -\x26gt; next = NULL; \/\/ 逆序输入n个元素的值 printf(\x26quot;输入n个元素的值：\x26quot;); for(int i = n; i \x26gt; 0; i--){ Node *p; p = (Node *)malloc(sizeof(Node));\t\/\/ 申请新的结点空间 scanf(\x26quot;%d\x26quot;,\x26amp;p -\x26gt; data);\t\/\/ 输入元素值 p -\x26gt; next = L -\x26gt; next;\t\/\/ 将新结点插入到表头 L -\x26gt; next = p; } return L; }  尾插法 尾插法是将结点插入到最后一个结点后面，即新插入的结点变为链表最后一个结点",
+    "inLanguage" : "en-us",
+    "author" : "云深隐星澜",
+    "creator" : "云深隐星澜",
+    "publisher": "云深隐星澜",
+    "accountablePerson" : "云深隐星澜",
+    "copyrightHolder" : "云深隐星澜",
+    "copyrightYear" : "2020",
+    "datePublished": "2020-09-07 13:14:38 \x2b0800 CST",
+    "dateModified" : "2020-09-07 13:14:38 \x2b0800 CST",
+    "url" : "https:\/\/meow-stars.github.io\/2020\/20200907\/",
+    "wordCount" : "424",
+    "keywords" : [ "线性表", "云深隐星澜 ~ MeowStars"]
+}
+</script>
+
+</head>
+
+  
+
+
+  <body class="">
+    <div class="wrapper">
+        <nav class="navbar">
+    <div class="container">
+        <div class="navbar-header header-logo">
+        	<a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">云深隐星澜 ~ MeowStars</a>
+        </div>
+        <div class="menu navbar-right">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+<nav class="navbar-mobile" id="nav-mobile" style="display: none">
+     <div class="container">
+        <div class="navbar-header">
+            <div>  <a href="javascript:void(0);" class="theme-switch"><i class="iconfont icon-xihuan"></i></a>&nbsp;<a href="https://meow-stars.github.io/">云深隐星澜 ~ MeowStars</a></div>
+            <div class="menu-toggle">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+     
+          <div class="menu" id="mobile-menu">
+                
+                
+                <a class="menu-item" href="/posts/" title="">Blog</a>
+                
+                <a class="menu-item" href="/categories/" title="">Categories</a>
+                
+                <a class="menu-item" href="/tags/" title="">Tags</a>
+                
+                <a class="menu-item" href="/about/" title="">About</a>
+                
+        </div>
+    </div>
+</nav>
+    	 <main class="main">
+          <div class="container">
+      		
+<article class="post-warp" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">【线性表】带头结点的单链表——基础操作</h1>
+        <div class="post-meta">
+                Written by <a itemprop="name" href="https://meow-stars.github.io/" rel="author">云深隐星澜</a> with ♥ 
+                <span class="post-time">
+                on <time datetime=2020-09-07 itemprop="datePublished">September 7, 2020</time>
+                </span>
+                in
+                <i class="iconfont icon-folder"></i>
+                <span class="post-category">
+                        <a href="https://meow-stars.github.io/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/"> 数据结构 </a>
+                        
+                </span>
+        </div>
+    </header>
+    <div class="post-content">
+        
+
+        
+
+        
+        
+     
+          
+          
+          
+
+          
+          
+          
+
+          
+
+<h2 id="定义结点类型">定义结点类型</h2>
+
+<pre><code class="language-C">typedef int Elemtype;
+// 因为该结构体中包含了Node类型变量（指针域），这是结构体的自引用，只能通过自引用指针*LinkList实现
+typedef struct Node{
+    Elemtype data;		// 数据域
+    struct Node *next;	// 指针域
+}Node,*LinkList;
+</code></pre>
+
+<h2 id="创建单链表">创建单链表</h2>
+
+<h3 id="头插法">头插法</h3>
+
+<p>头插法是将结点a~n~、a~n-1~、a~n-2~、……、a~1~逐个插入到头结点后面，因此输入时要逆序输入</p>
+
+<pre><code class="language-C">LinkList CreateLinkListHead(int n){
+    // 先建立一个带头结点的空单链表L
+    Node *L;
+    L = (Node *)malloc(sizeof(Node));
+    L -&gt; next = NULL;
+    // 逆序输入n个元素的值
+    printf(&quot;输入n个元素的值：&quot;);
+    for(int i = n; i &gt; 0; i--){
+        Node *p;
+        p = (Node *)malloc(sizeof(Node));	      // 申请新的结点空间
+        scanf(&quot;%d&quot;,&amp;p -&gt; data);					// 输入元素值
+        p -&gt; next = L -&gt; next;				 // 将新结点插入到表头
+        L -&gt; next = p;
+    }
+    return L;
+}
+</code></pre>
+
+<h3 id="尾插法">尾插法</h3>
+
+<p>尾插法是将结点插入到最后一个结点后面，即新插入的结点变为链表最后一个结点</p>
+
+<pre><code class="language-C">LinkList CreateLinkListTail(int n){
+    // 先建立一个带头结点的空单链表L，pL是指向头结点的指针
+    Node *L;
+    L = (Node *)malloc(sizeof(Node));
+    L -&gt; next = NULL;
+    Node *pL = L;
+    // 顺序输入n个元素的值
+    printf(&quot;输入n个元素的值：&quot;);
+    for(int i = 0; i &lt; n; i++){
+        Node *p;
+        p = (Node *)malloc(sizeof(Node));	      // 申请新的结点空间
+        scanf(&quot;%d&quot;,&amp;p -&gt; data);					// 输入元素值
+        p -&gt; next = NULL;
+        pL -&gt; next = p;                            // 将新结点插入到表头
+        pL = pL -&gt; next;
+    }
+    return L;
+}
+</code></pre>
+
+<h2 id="插入">插入</h2>
+
+<p>在链表的第i个位置插入元素e，使元素e称为新链表的第i个元素</p>
+
+<pre><code class="language-C">int ListInsert(LinkList L, int i, Elemtype e){
+    Node *p;
+    p = L;			// p指向第i个位置结点的前驱结点，初始结果 = 头结点
+    int index ;	// 计数器
+    for(index = 1; index &lt; i; index++){		// 寻找第i-1个结点，即第i个结点的前驱结点
+        p = p -&gt; next;
+    }
+    Node *s;
+    s = (Node *)malloc(sizeof(Node));
+    s -&gt; data = e;							    // 插入值为e的结点x
+    s -&gt; next = p -&gt; next;
+    p -&gt; next = s;
+    return 1;
+}
+</code></pre>
+
+<h2 id="删除">删除</h2>
+
+<p>删除链表中值为e的结点，这段代码如果有重复元素，只能删除第一个出现的</p>
+
+<pre><code class="language-C">// 单链表的删除，删除链表中值为e的元素
+int ListDelete(LinkList L, Elemtype e){
+    Node *p,*x;				// p指向待删除结点的前驱结点，x指向待删除结点
+    p = L ;
+    x = L -&gt; next;
+    while(x -&gt; data != e){
+        p = x;
+        x = x -&gt; next;
+    }
+    p -&gt; next = x -&gt; next;	// 删除并释放结点x
+    free(x);
+    return 1;
+}
+</code></pre>
+
+<h2 id="查找">查找</h2>
+
+<p>在单链表中查找元素e，如果存在元素e，返回e第一次出现的位置，否则返回-1</p>
+
+<pre><code class="language-C">// 在链表中查找结点e
+int ListSearch(LinkList L, Elemtype e){
+    Node *p = L;                // p最先指向头结点
+    int i = 1;                    // i是结点e的位置
+    while(p -&gt; next){
+        p = p -&gt; next;          // 为什么要先执行p = p -&gt; next？因为要让p指向第一个结点
+        if(p -&gt; data == e){
+            return i;
+        }
+        i++;
+    }
+    return -1;                  // 不存在结点e则返回-1
+}
+</code></pre>
+
+<h2 id="获取单链表长度">获取单链表长度</h2>
+
+<p>这个长度是单链表有意义的长度，不包含头结点</p>
+
+<pre><code class="language-C">int ListLength(LinkList L){
+    Node *p = L;
+    int index = 0;
+    while(p -&gt; next){
+        p = p -&gt; next;
+        index++;
+    }
+    return index;
+}
+</code></pre>
+
+<h2 id="打印整个单链表">打印整个单链表</h2>
+
+<pre><code class="language-C">void PrintList(LinkList list){
+    Node *p = list;
+    if( p -&gt; next == NULL){             // p指向list的头结点，所以判断空表是p -&gt; next == NULL
+        printf(&quot;这素一个空链表&quot;);
+    }
+    while(p -&gt; next){
+        p = p -&gt; next;
+        printf(&quot;%d  &quot;,p -&gt; data);
+    }
+    printf(&quot;\n&quot;);
+}
+</code></pre>
+
+<h2 id="main-函数">main( )函数</h2>
+
+<pre><code class="language-C">int main(){
+	LinkList list;
+	// 创建单链表A
+	printf(&quot;输入链表长度n：&quot;);
+	int n;
+	scanf(&quot;%d&quot;,&amp;n);
+	list = CreateLinkListTail(n);
+	PrintList(list);
+	printf(&quot;单链表长度%d&quot;,ListLength(list));
+
+	// 插入结点
+	printf(&quot;输入插入位置i：&quot;);
+	int i;
+	scanf(&quot;%d&quot;,&amp;i);
+	printf(&quot;输入插入元素e的值：&quot;);
+	Elemtype e1;
+	scanf(&quot;%d&quot;,&amp;e1);
+	ListInsert(list,i,e1);
+	PrintList(list);
+
+	// 删除结点
+	printf(&quot;输入删除元素e的值：&quot;);
+	Elemtype e2;
+	scanf(&quot;%d&quot;,&amp;e2);
+	ListDelete(list,e2);
+    PrintList(list);
+
+    // 查找结点
+    printf(&quot;输入查找元素e的值：&quot;);
+    Elemtype e3;
+    scanf(&quot;%d&quot;,&amp;e3);
+    int index = ListSearch(list,e3);
+    printf(&quot;%d&quot;);
+}
+</code></pre>
+
+    </div>
+
+    <div class="post-copyright">
+             
+            <p class="copyright-item">
+                <span>Author:</span>
+                <span>云深隐星澜 </span>
+                </p>
+            
+           
+             
+            <p class="copyright-item">
+                    <span>Link:</span>
+                    <a href=https://meow-stars.github.io/2020/20200907/>https://meow-stars.github.io/2020/20200907/</span>
+            </p>
+            
+             
+            <p class="copyright-item lincese">
+                本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+            </p>
+            
+    </div>
+
+  
+    <div class="post-tags">
+        
+            <section>
+            <i class="iconfont icon-tag"></i>Tag(s): 
+            
+            <span class="tag"><a href="https://meow-stars.github.io/tags/%E7%BA%BF%E6%80%A7%E8%A1%A8/">
+                    #线性表</a></span>
+            
+            </section>
+        
+        <section>
+                <a href="javascript:window.history.back();">back</a></span> · 
+                <span><a href="https://meow-stars.github.io/">home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+        
+        <a href="https://meow-stars.github.io/2020/20200305/" class="prev" rel="prev" title="【iOS】UICollectionView中使用Button"><i class="iconfont icon-left"></i>&nbsp;【iOS】UICollectionView中使用Button</a>
+         
+        
+    </div>
+
+    <div class="post-comment">
+          
+                 
+          
+    </div>
+</article>
+          </div>
+		   </main>
+      <footer class="footer">
+    <div class="copyright">
+        &copy;
+        
+        <span itemprop="copyrightYear">2019 - 2020</span>
+        
+        <span class="with-love">
+    	 <i class="iconfont icon-love"></i> 
+         </span>
+         
+            <span class="author" itemprop="copyrightHolder"><a href="https://meow-stars.github.io/">云深隐星澜</a> | </span> 
+         
+
+         
+		  <span>Powered by <a href="https://gohugo.io/" target="_blank" rel="external nofollow">Hugo</a> & <a href="https://github.com/liuzc/leaveit" target="_blank" rel="external nofollow">LeaveIt</a></span> 
+    </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    <script src="/js/vendor_no_gallery.min.js" async=""></script>
+    
+  
+
+
+
+     </div>
+  </body>
+</html>
